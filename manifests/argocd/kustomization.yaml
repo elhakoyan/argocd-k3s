@@ -8,7 +8,7 @@ resources:
 # - base/argo-cd-ui-ingress.yaml
 # - base/jenkins-ingress.yaml
 # - base/rollouts-extension.yaml
-- https://raw.githubusercontent.com/argoproj/argo-cd/v2.6.7/manifests/ha/install.yaml
+- https://raw.githubusercontent.com/argoproj/argo-cd/v2.6.7/manifests/install.yaml
 
 # components:
 # - https://github.com/argoproj-labs/argocd-extensions/manifests
@@ -32,7 +32,7 @@ resources:
 
 namespace: argocd
 
-images:
-- name: quay.io/argoproj/argocd
-  newTag: v2.6.7
+# images:
+# - name: quay.io/argoproj/argocd
+#   newTag: v2.6.7
 # quay.io/argoproj/argocd:v
