@@ -18,7 +18,7 @@ spec:
     metadata:
       name: '{{path.basenameNormalized}}'
     spec:
-      project: pxl
+      project: default
       source:
         repoURL: https://github.com/grig777/k3s-argocd-provisioning
         targetRevision: HEAD
