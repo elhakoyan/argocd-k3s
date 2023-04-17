@@ -9,6 +9,8 @@ spec:
     repoURL: https://bitnami-labs.github.io/sealed-secrets
     chart: sealed-secrets
     targetRevision: 2.8.1
+    helm:
+      releaseName: sealed-secrets
     # helm:
     #   valueFiles:
     #   - $values/manifests/kustomize/base/sealed-secrets/values.yaml
