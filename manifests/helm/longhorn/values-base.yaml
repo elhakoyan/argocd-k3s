@@ -1,19 +1,19 @@
 longhorn:
-  defaultSettings:
-    systemManagedComponentsNodeSelector: "persistent: true"
+  # defaultSettings:
+  #   systemManagedComponentsNodeSelector: "persistent: true"
 
-  longhornManager:
-    nodeSelector: 
-      persistent: "true"
+  # longhornManager:
+  #   nodeSelector: 
+  #     persistent: "true"
 
 
-  longhornDriver:
-    nodeSelector: 
-      persistent: "true"
+  # longhornDriver:
+  #   nodeSelector: 
+  #     persistent: "true"
 
-  longhornUI:
-    nodeSelector: 
-      persistent: "true"
+  # longhornUI:
+  #   nodeSelector: 
+  #     persistent: "true"
 
 
   resources: 
