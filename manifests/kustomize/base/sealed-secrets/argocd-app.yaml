@@ -1,32 +1,3 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: sealed-secrets
-#   namespace: argocd
-# spec:
-#   project: default
-#   source:
-#     repoURL: https://bitnami-labs.github.io/sealed-secrets
-#     chart: sealed-secrets
-#     targetRevision: 2.8.1
-#     helm:
-#       releaseName: sealed-secrets
-    # helm:
-    #   valueFiles:
-    #   - $values/manifests/kustomize/base/sealed-secrets/values.yaml
-  # - repoURL: https://github.com/grig777/k3s-argocd-provisioning
-  #   targetRevision: HEAD
-  #   ref: values
-  # destination:
-  #   server: https://kubernetes.default.svc
-    # namespace: default
-  # syncPolicy:
-  #   automated:
-  #     prune: true
-  #     selfHeal: true
-  #   syncOptions:
-  #     - CreateNamespace=true
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -34,12 +5,22 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
+  sources:
+  - repoURL: https://bitnami-labs.github.io/sealed-secrets
     chart: sealed-secrets
-    repoURL: https://bitnami-labs.github.io/sealed-secrets
-    targetRevision: 1.2.11
+    targetRevision: 2.8.1
     helm:
-      releaseName: sealed-secrets
+      valueFiles:
+      - $values/manifests/kustomize/base/sealed-secrets/values.yaml
+  - repoURL: https://github.com/grig777/k3s-argocd-provisioning
+    targetRevision: HEAD
+    ref: values
   destination:
-    server: "https://kubernetes.default.svc"
-    namespace: kubeseal
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
