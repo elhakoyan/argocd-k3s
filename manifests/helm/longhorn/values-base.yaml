@@ -1,0 +1,27 @@
+longhorn:
+  defaultSettings:
+    systemManagedComponentsNodeSelector: "persistent: true"
+
+  longhornManager:
+    nodeSelector: 
+      persistent: "true"
+
+
+  longhornDriver:
+    nodeSelector: 
+      persistent: "true"
+
+  longhornUI:
+    nodeSelector: 
+      persistent: "true"
+
+
+  resources: 
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+

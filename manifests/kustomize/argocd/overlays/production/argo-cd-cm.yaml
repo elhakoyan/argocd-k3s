@@ -1,6 +1,7 @@
 apiVersion: v1
 data:
   application.resourceTrackingMethod: annotation
+  kustomize.buildOptions: --enable-helm
   resource.exclusions: |
     - apiGroups:
       - cilium.io
