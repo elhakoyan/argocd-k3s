@@ -9,7 +9,7 @@ spec:
         repoURL: https://github.com/grig777/k3s-argocd-provisioning
         revision: HEAD
         directories:
-        - path: manifests/helm/*/prod/
+        - path: manifests/helm/*/prod/*
   template:
     metadata:
       name: '{{path.basenameNormalized}}'
