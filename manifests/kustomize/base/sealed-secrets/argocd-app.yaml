@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  sources:
-  - repoURL: https://bitnami-labs.github.io/sealed-secrets
+  source:
+    repoURL: https://bitnami-labs.github.io/sealed-secrets
     chart: sealed-secrets
     targetRevision: 2.8.1
     # helm:
