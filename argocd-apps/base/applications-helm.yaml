@@ -1,17 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: argocd-application-set
+  name: argocd-applications-helm
   namespace: argocd
-  # annotations:
-  #   argocd.argoproj.io/sync-wave: "50"
 spec:
   generators:
     - git:
         repoURL: https://github.com/grig777/k3s-argocd-provisioning
         revision: HEAD
         directories:
-        - path: manifests/kustomize/overlays/prod/*
+        - path: manifests/helm/*/prod/
   template:
     metadata:
       name: '{{path.basenameNormalized}}'
@@ -21,9 +19,12 @@ spec:
         repoURL: https://github.com/grig777/k3s-argocd-provisioning
         targetRevision: HEAD
         path: '{{path}}'
+        helm:
+          valueFiles:
+          - ../values-base.yaml
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path[4]}}'
+        namespace: '{{path[3]}}'
       syncPolicy:
         automated:
           prune: true
