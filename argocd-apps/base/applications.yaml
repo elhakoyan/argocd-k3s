@@ -11,7 +11,7 @@ spec:
         repoURL: https://github.com/grig777/k3s-argocd-provisioning
         revision: HEAD
         directories:
-        - path: manifests/kustomize/*
+        - path: manifests/kustomize/overlays/prod/*
   template:
     metadata:
       name: '{{path.basenameNormalized}}'
