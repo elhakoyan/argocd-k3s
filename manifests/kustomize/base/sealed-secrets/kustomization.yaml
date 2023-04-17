@@ -3,3 +3,10 @@ kind: Kustomization
 
 resources:
 - argocd-app.yaml
+
+helmCharts:
+- name: sealed-secrets
+  repo: https://bitnami-labs.github.io/sealed-secrets
+  version: v2.8.1
+  releaseName: sealed-secrets
+  namespace: sealed-secrets
