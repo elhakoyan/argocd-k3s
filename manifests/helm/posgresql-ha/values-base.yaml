@@ -1,1 +1,3 @@
-# postgresql-ha:
+postgresql-ha:
+  persistence:
+    size: 1Gi
