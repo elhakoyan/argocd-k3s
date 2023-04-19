@@ -1,0 +1,8 @@
+apiVersion: v2
+name: postgresql-ha
+type: application
+version: 1.0.0
+dependencies:
+  - name: postgresql-ha
+    version: "11.2.1"
+    repository: https://charts.bitnami.com/bitnami
