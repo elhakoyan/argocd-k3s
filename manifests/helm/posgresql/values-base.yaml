@@ -5,3 +5,5 @@ postgresql:
   readReplicas:
     persistence:
       size: 100Mi
+  global:
+    storageClass: longhorn
