@@ -1,7 +1,7 @@
 postgresql:
   primary:
     persistence:
-      size: 1Gi
+      size: 100Mi
   readReplicas:
     persistence:
-      size: 1Gi
+      size: 100Mi
