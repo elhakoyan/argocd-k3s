@@ -19,7 +19,7 @@ spec:
   #   secretName: pxl-vision-crt
   rules:
   # - host: k8s-argocd-dev.pxl-vision.com
-    http:
+    - http:
       paths:
       - path: /
         pathType: Prefix
