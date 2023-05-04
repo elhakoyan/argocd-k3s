@@ -13,13 +13,13 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
-  # tls:
-  # - hosts:
-  #     - k8s-argocd-dev.pxl-vision.com
-  #   secretName: pxl-vision-crt
+  tls:
+  - hosts:
+      - 44.202.207.54.nip.io
+    secretName: pxl-vision-crt
   rules:
-  # - host: k8s-argocd-dev.pxl-vision.com
-    - http:
+  - host: 44.202.207.54.nip.io
+    http:
       paths:
       - path: /
         pathType: Prefix
