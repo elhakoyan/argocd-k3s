@@ -1,6 +1,6 @@
 ingress-nginx:
   controller:
-    kind: Demonset
+    kind: DaemonSet
     hostNetwork: true
     ## Use host ports 80 and 443
     ## Disabled by default
