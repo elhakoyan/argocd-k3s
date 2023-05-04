@@ -1,0 +1,13 @@
+ingress-nginx:
+  controller:
+    hostNetwork: true
+    ## Use host ports 80 and 443
+    ## Disabled by default
+    hostPort:
+      # -- Enable 'hostPort' or not
+      enabled: true
+      ports:
+        # -- 'hostPort' http port
+        http: 80
+        # -- 'hostPort' https port
+        https: 443
