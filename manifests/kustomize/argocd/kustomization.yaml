@@ -5,7 +5,7 @@ kind: Kustomization
 resources:
 # - base/argo-cd-issuer.yaml
 # - base/argo-cd-certificate.yaml
-# - base/argo-cd-ui-ingress.yaml
+- base/argo-cd-ui-ingress.yaml
 # - base/jenkins-ingress.yaml
 # - base/rollouts-extension.yaml
 - https://raw.githubusercontent.com/argoproj/argo-cd/v2.6.7/manifests/install.yaml
@@ -16,7 +16,6 @@ resources:
 patchesStrategicMerge:
 - overlays/production/argo-cd-cm.yaml
 - overlays/production/argocd-server-service.yaml
-- overlays/production/argocd-nginx-ingress.yaml
 # - overlays/production/argocd-repo-server-deploy.yaml
 # - overlays/production/argocd-notifications-controller-deploy.yaml
 # - overlays/production/argocd-notifications-cm.yaml
