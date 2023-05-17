@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nested2
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  sources:
+  - repoURL: 'https://prometheus-community.github.io/helm-charts'
+    chart: prometheus
+    targetRevision: 15.7.1
+    helm:
+      valueFiles:
+      - $values/tests/b/values.yaml
+  - repoURL: 'https://github.com/grig777/k3s-argocd-provisioning'
+    targetRevision: master
+    ref: values

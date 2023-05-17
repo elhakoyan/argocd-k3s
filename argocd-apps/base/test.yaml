@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: testamit
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  source:
+    repoURL: https://github.com/grig777/k3s-argocd-provisioning
+    path: tests/a/
+    targetRevision: HEAD
+    directory:
+      recurse: true
