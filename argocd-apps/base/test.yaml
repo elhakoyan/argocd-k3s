@@ -1,22 +1,56 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: testamit
+#   namespace: argocd
+# spec:
+#   project: default
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: default
+#   source:
+#     repoURL: https://github.com/grig777/k3s-argocd-provisioning.git
+#     path: tests/a/
+#     targetRevision: HEAD
+#     # Tool -> k
+#     directory:
+#       recurse: true
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#     - CreateNamespace=true
+
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
-  name: testamit
+  name: argocd-applications-kustomize
   namespace: argocd
+  # annotations:
+  #   argocd.argoproj.io/sync-wave: "50"
 spec:
-  project: default
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: default
-  source:
-    repoURL: https://github.com/grig777/k3s-argocd-provisioning.git
-    path: tests/a/
-    targetRevision: HEAD
-    directory:
-      recurse: true
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-    - CreateNamespace=true
+  generators:
+    - git:
+        repoURL: https://github.com/grig777/k3s-argocd-provisioning
+        revision: HEAD
+        directories:
+        - path: tests/a/*
+  template:
+    metadata:
+      name: '{{path.basenameNormalized}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/grig777/k3s-argocd-provisioning.git
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{path[2]}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
