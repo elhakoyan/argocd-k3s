@@ -9,7 +9,7 @@ patches:
     - op: add
       path: /spec/sources/0/helm/valueFiles/-
       value:
-        $values/manifests/environment/prod/monitoring-apps/prometheus/helm-values/values.yaml
+        $values/environments/prod/monitoring-apps/prometheus/helm-values/values.yaml
   target:
     kind: Application
     name: promethues
