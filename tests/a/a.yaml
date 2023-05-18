@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: default
   sources:
-  - repoURL: 'https://prometheus-community.github.io/helm-charts'
-    chart: prometheus
-    targetRevision: 15.7.1
+  - repoURL: 'https://github.com/grig777/k3s-argocd-provisioning.git'
+    # chart: prometheus
+    targetRevision: HEAD
     helm:
       valueFiles:
       - $values/tests/b/values.yaml
