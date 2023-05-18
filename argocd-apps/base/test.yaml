@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: default
   source:
-    repoURL: https://github.com/grig777/k3s-argocd-provisioning
+    repoURL: https://github.com/grig777/k3s-argocd-provisioning.git
     path: tests/a/
     targetRevision: HEAD
     directory:

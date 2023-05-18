@@ -16,7 +16,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/grig777/k3s-argocd-provisioning
+        repoURL: https://github.com/grig777/k3s-argocd-provisioning.git
         targetRevision: HEAD
         path: '{{path}}'
         helm:
