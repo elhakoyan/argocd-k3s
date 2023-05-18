@@ -3,6 +3,6 @@ kind: Kustomization
 
 resources:
   # - "applications-helm.yaml"
-  # - "applications-kustomize.yaml"
-  - "test.yaml"
+  - "applications-kustomize.yaml"
+  # - "test.yaml"
 
