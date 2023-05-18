@@ -21,11 +21,11 @@
 #       selfHeal: true
 #     syncOptions:
 #     - CreateNamespace=true
-
+---
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: argocd-applications-kustomize
+  name: artttttt
   namespace: argocd
   # annotations:
   #   argocd.argoproj.io/sync-wave: "50"
