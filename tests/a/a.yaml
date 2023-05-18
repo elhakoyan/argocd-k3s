@@ -16,5 +16,5 @@ spec:
       valueFiles:
       - $values/tests/b/values.yaml
   - repoURL: 'https://github.com/grig777/k3s-argocd-provisioning'
-    targetRevision: master
+    targetRevision: HEAD
     ref: values
