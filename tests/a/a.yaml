@@ -18,3 +18,9 @@ spec:
   - repoURL: 'https://github.com/grig777/k3s-argocd-provisioning.git'
     targetRevision: HEAD
     ref: values
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
