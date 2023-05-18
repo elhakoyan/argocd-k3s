@@ -14,7 +14,7 @@ spec:
     targetRevision: 15.7.1
     helm:
       valueFiles:
-      - $values/tests/b/values.yaml
+      - $values/manifests/base/{{path[2]}}/helm-values/values.yaml
   - repoURL: 'https://github.com/grig777/k3s-argocd-provisioning.git'
     targetRevision: HEAD
     ref: values

@@ -35,7 +35,7 @@ spec:
         repoURL: https://github.com/grig777/k3s-argocd-provisioning
         revision: HEAD
         directories:
-        - path: tests/a/*
+        - path: manifests/environments/prod/*
   template:
     metadata:
       name: '{{path.basenameNormalized}}'
@@ -47,10 +47,10 @@ spec:
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path[2]}}'
+        # namespace: '{{path[2]}}'
       syncPolicy:
         automated:
           prune: true
           selfHeal: true
-        syncOptions:
-        - CreateNamespace=true
+        # syncOptions:
+        # - CreateNamespace=true
