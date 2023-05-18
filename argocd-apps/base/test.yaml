@@ -35,7 +35,7 @@ spec:
         repoURL: https://github.com/grig777/k3s-argocd-provisioning
         revision: HEAD
         directories:
-        - path: tests/monitoring/*
+        - path: tests/a/*
   template:
     metadata:
       name: '{{path.basenameNormalized}}'
