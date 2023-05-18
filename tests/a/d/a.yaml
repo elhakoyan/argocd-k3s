@@ -11,6 +11,7 @@ spec:
   sources:
   - repoURL: 'https://github.com/grig777/k3s-argocd-provisioning.git'
     # chart: prometheus
+    path: $values/tests/b/sealed-secrets
     targetRevision: HEAD
     helm:
       valueFiles:
