@@ -10,18 +10,18 @@ spec:
     namespace: default
   # sources:
   source:
-    repoURL: 'https://prometheus-community.github.io/helm-charts'
+  - repoURL: 'https://prometheus-community.github.io/helm-charts'
     chart: prometheus
-    # targetRevision: 15.7.1
+    targetRevision: 15.7.1
     helm:
       valueFiles:
       - $values/tests/b/values.yaml
-  # - repoURL: 'https://github.com/grig777/k3s-argocd-provisioning.git'
-  #   targetRevision: HEAD
-  #   ref: values
-  # syncPolicy:
-  #   automated:
-  #     prune: true
-  #     selfHeal: true
-  #   syncOptions:
-  #   - CreateNamespace=true
+  - repoURL: 'https://github.com/grig777/k3s-argocd-provisioning.git'
+    targetRevision: HEAD
+    ref: values
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
