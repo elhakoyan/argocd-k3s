@@ -13,3 +13,11 @@ patches:
   target:
     kind: Application
     name: cert-manager
+- patch: |-
+    - op: add
+      path: /spec/sources/0/helm/valueFiles/-
+      value:
+        $values/manifests/environments/prod/helm-apps/sealed-secrets/helm-values/values.yaml
+  target:
+    kind: Application
+    name: sealed-secrets
