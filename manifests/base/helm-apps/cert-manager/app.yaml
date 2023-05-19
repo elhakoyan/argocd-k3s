@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: promethues
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  sources:
+  - repoURL: https://charts.jetstack.io
+    chart: cert-manager
+    targetRevision: 1.8.0
+    helm:
+      valueFiles:
+      - $values/manifests/base/helm-apps/cert-manager/helm-values/values.yaml
+  - repoURL: 'https://github.com/grig777/k3s-argocd-provisioning.git'
+    targetRevision: HEAD
+    ref: values
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
