@@ -1,8 +1,11 @@
 apiVersion: v2
-name: minio-operator
+name: minio
 type: application
 version: 1.0.0
 dependencies:
   - name: operator
+    version: "5.0.4"
+    repository: https://operator.min.io/
+  - name: tenant
     version: "5.0.4"
     repository: https://operator.min.io/
