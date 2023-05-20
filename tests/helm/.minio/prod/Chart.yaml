@@ -1,8 +1,8 @@
 apiVersion: v2
-name: longhorn
+name: minio-operator
 type: application
 version: 1.0.0
 dependencies:
-  - name: longhorn
-    version: "1.4.1"
-    repository: https://charts.longhorn.io
+  - name: operator
+    version: "5.0.4"
+    repository: https://operator.min.io/
