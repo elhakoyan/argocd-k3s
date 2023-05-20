@@ -1,8 +1,0 @@
-sealed-secrets:
-  resources:
-    requests:
-      memory: "111Mi"
-      cpu: "111m"
-    limits:
-      memory: "111Mi"
-      cpu: "111m"
