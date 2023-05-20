@@ -1,4 +1,5 @@
 longhorn:
+  namespaceOverride: "longhorn-system"
   defaultSettings:
     replicaSoftAntiAffinity: true
     replicaZoneSoftAntiAffinity: true
