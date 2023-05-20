@@ -9,7 +9,7 @@ spec:
         repoURL: https://github.com/grig777/k3s-argocd-provisioning
         revision: HEAD
         directories:
-        - path: tests/helm/*/prod/Chart.yaml
+        - path: tests/helm/*
   template:
     metadata:
       name: '{{path.basenameNormalized}}'
@@ -18,7 +18,7 @@ spec:
       source:
         repoURL: https://github.com/grig777/k3s-argocd-provisioning.git
         targetRevision: HEAD
-        path: '{{path}}'
+        path: '{{path}}/prod'
         helm:
           valueFiles:
           - ../values-base.yaml
