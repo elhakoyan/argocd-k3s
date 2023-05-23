@@ -1,6 +1,13 @@
 coredns:
   isClusterService: false
 
+  serviceType: LoadBalancer
+
+  service:
+    annotations:
+      kube-vip.io/loadbalancerIPs: "192.168.30.205"
+
+
   servers:
   - zones:
     - zone: .
