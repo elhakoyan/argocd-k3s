@@ -7,3 +7,5 @@ persistence:
 auth:
   rbac: 
     create: false
+  token:
+    enabled: false
