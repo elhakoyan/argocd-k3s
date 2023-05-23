@@ -21,3 +21,11 @@ patches:
   target:
     kind: Application
     name: sealed-secrets
+- patch: |-
+    - op: add
+      path: /spec/sources/0/helm/valueFiles/-
+      value:
+        $values/manifests/environments/prod/helm-apps/etcd/helm-values/values.yaml
+  target:
+    kind: Application
+    name: sealed-secrets

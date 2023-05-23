@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: etcd
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cert-manager
+  sources:
+  - repoURL: https://charts.bitnami.com/bitnami
+    chart: etcd
+    targetRevision: 3.5.9
+    helm:
+      valueFiles:
+      - $values/manifests/base/helm-apps/etcd/helm-values/values.yaml
+  - repoURL: 'https://github.com/grig777/k3s-argocd-provisioning.git'
+    targetRevision: HEAD
+    ref: values
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

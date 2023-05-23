@@ -1,0 +1,5 @@
+global:
+  storageClass: "directpv-min-io"
+replicaCount: 3
+persistence:
+  size: 1Gi
