@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - "cert-manager/app.yaml"
   - "sealed-secrets/app.yaml"
+  - "etcd/app.yaml"
