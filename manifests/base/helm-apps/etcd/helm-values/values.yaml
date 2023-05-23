@@ -3,3 +3,7 @@ global:
 replicaCount: 3
 persistence:
   size: 1Gi
+
+auth:
+  rbac: 
+    create: false
