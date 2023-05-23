@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: cert-manager
   sources:
-  - repoURL: https://charts.bitnami.com/bitnami
+  - repoURL: oci://registry-1.docker.io/bitnamicharts
     chart: etcd
     targetRevision: 3.5.9
     helm:
