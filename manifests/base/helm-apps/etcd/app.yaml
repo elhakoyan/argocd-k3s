@@ -11,7 +11,7 @@ spec:
   sources:
   - repoURL: https://charts.bitnami.com/bitnami
     chart: etcd
-    targetRevision: 3.5.9
+    targetRevision: 8.11.4
     helm:
       valueFiles:
       - $values/manifests/base/helm-apps/etcd/helm-values/values.yaml
