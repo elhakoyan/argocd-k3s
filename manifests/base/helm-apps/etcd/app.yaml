@@ -7,9 +7,9 @@ spec:
   project: default
   destination:
     server: https://kubernetes.default.svc
-    namespace: cert-manager
+    namespace: etcd
   sources:
-  - repoURL: https://artifacthub.io/packages/helm/bitnami
+  - repoURL: https://charts.bitnami.com/bitnami
     chart: etcd
     targetRevision: 3.5.9
     helm:
