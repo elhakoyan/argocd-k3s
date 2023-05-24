@@ -37,11 +37,11 @@ namespace: argocd
 #   newTag: v2.6.7
 # quay.io/argoproj/argocd:v
 
-patches:
-- path: overlays/production/dns-config-patch.yaml
-  target:
-    kind: Deployment
-- path: overlays/production/dns-config-patch.yaml
-  target:
-    kind: StatefulSet
-    version: v1
+# patches:
+# - path: overlays/production/dns-config-patch.yaml
+#   target:
+#     kind: Deployment
+# - path: overlays/production/dns-config-patch.yaml
+#   target:
+#     kind: StatefulSet
+#     version: v1
