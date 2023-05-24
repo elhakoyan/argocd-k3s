@@ -28,15 +28,14 @@ spec:
     - example.org
   issuerRef:
     name: selfsigned
-    kind: Issuer
+    kind: ClusterIssuer
     group: cert-manager.io
 ---
 # Create a CA issuer using our root. This will be the Issuer which istio-csr will use.
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
   name: nginx-ca
-  namespace: kube-system
 spec:
   ca:
     secretName: nginx-ca
