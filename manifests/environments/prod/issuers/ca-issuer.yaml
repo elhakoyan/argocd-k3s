@@ -1,0 +1,41 @@
+# SelfSigned issuers are useful for creating root certificates
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: selfsigned
+spec:
+  selfSigned: {}
+---
+# Request a self-signed certificate from our Issuer; this will function as our
+# issuing root certificate when we pass it into a CA Issuer.
+
+# It's generally fine to issue root certificates like this one with long lifespans;
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nginx-ca
+  namespace: kube-system
+spec:
+  isCA: true
+  duration: 87600h # 10 years
+  secretName: nginx-ca
+  commonName: nginx-ca
+  privateKey:
+    algorithm: ECDSA
+    size: 256
+  subject:
+    organizations:
+    - example.org
+  issuerRef:
+    name: selfsigned
+    kind: Issuer
+    group: cert-manager.io
+---
+# Create a CA issuer using our root. This will be the Issuer which istio-csr will use.
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: nginx-ca
+spec:
+  ca:
+    secretName: nginx-ca
