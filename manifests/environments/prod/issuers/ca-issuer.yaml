@@ -17,7 +17,7 @@ metadata:
   namespace: kube-system
 spec:
   isCA: true
-  duration: 87600h # 10 years
+  duration: 87600h0m0s # 10 years
   secretName: nginx-ca
   commonName: nginx-ca
   privateKey:
