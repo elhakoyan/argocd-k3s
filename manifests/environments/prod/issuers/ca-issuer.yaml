@@ -33,8 +33,7 @@ spec:
 ---
 # Create a CA issuer using our root. This will be the Issuer which istio-csr will use.
 apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
-
+kind: Issuer
 metadata:
   name: nginx-ca
   namespace: kube-system
