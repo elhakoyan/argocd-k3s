@@ -13,6 +13,10 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
+  tls:
+  - hosts:
+      - argocd.example.org
+    secretName: pxl-vision-crt
   rules:
   - host: argocd.example.org
     http:
