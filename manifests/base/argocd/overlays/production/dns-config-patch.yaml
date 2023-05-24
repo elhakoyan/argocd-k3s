@@ -7,8 +7,8 @@
 - op: add
   path: /spec/template/spec/dnsConfig/nameservers
   value:
-    - 192.168.30.205
     - 10.43.0.10
+    - 192.168.30.205
 - op: add
   path: /spec/template/spec/dnsConfig/searches
   value:
