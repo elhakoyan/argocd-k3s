@@ -1,0 +1,9 @@
+postgresql:
+  primary:
+    persistence:
+      size: 100Mi
+  readReplicas:
+    persistence:
+      size: 100Mi
+  global:
+    storageClass: longhorn
