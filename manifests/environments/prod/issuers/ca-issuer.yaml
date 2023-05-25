@@ -19,13 +19,14 @@ spec:
   isCA: true
   duration: 87600h0m0s # 10 years
   secretName: nginx-ca
-  commonName: nginx-ca
+  commonName: "*.example.org"
   privateKey:
     algorithm: ECDSA
     size: 256
   subject:
     organizations:
-    - example.org
+    - "example.org"
+    - "*.example.org"
   issuerRef:
     name: selfsigned
     kind: ClusterIssuer
