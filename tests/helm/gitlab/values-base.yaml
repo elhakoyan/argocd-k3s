@@ -314,7 +314,7 @@ gitlab:
           # secret:
           # key:
       lfs:
-        enabled: true
+        enabled: false
         proxy_download: true
         bucket: git-lfs
         connection: {}
