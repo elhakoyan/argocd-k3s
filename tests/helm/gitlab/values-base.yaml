@@ -1195,11 +1195,11 @@ gitlab:
       create: true
     runners:
       locked: false
-      # environment = [
-      #       "GIT_SSL_NO_VERIFY=1"
-      #     ]
       config: |
         [[runners]]
+          environment = [
+            "GIT_SSL_NO_VERIFY=1"
+          ]
           [runners.kubernetes]
           image = "ubuntu:22.04"
           {{- if .Values.global.minio.enabled }}
