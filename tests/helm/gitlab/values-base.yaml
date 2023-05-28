@@ -509,6 +509,7 @@ gitlab:
         requiredForGitAccess: false
 
       sidekiq:
+        enabled: false
         routingRules: []
 
       # Config that only applies to the defaults on initial install
@@ -1160,7 +1161,7 @@ gitlab:
   ## Installation & configuration of gitlab/gitlab-runner
   ## See requirements.yaml for current version
   gitlab-runner:
-    gitlabUrl: http://gitlab-webservice-default.gitlab
+    gitlabUrl: https://gitlab-webservice-default.gitlab
     # certsSecretName: gitlab-ingress-ssl
     install: true
     rbac:
