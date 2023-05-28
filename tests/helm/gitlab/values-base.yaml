@@ -1143,7 +1143,6 @@ gitlab:
 
   
   minio:
-    enabled: true
     ingress:
       enabled: true
       annotations:
