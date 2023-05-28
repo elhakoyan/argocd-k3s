@@ -1167,10 +1167,10 @@ gitlab:
       locked: false
       config: |
         [[runners]]
-          [runners.kubernetes]
           environment = [
             "GIT_SSL_NO_VERIFY=1"
           ]
+          [runners.kubernetes]
           image = "ubuntu:22.04"
           {{- if .Values.global.minio.enabled }}
           [runners.cache]
