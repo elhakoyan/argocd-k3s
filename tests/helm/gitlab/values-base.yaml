@@ -328,7 +328,7 @@ gitlab:
           # secret:
           # key:
       uploads:
-        enabled: true
+        enabled: false
         proxy_download: true
         bucket: gitlab-uploads
         connection: {}
