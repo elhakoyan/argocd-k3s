@@ -1150,14 +1150,6 @@ gitlab:
         enabled: true
         secretName: minio-ingress-ssl
   
-  webservice:
-    ingress:
-      enabled: true
-      annotations:
-        cert-manager.io/cluster-issuer: nginx-ca
-      tls:
-        enabled: true
-        secretName: gitlan-ingress-ssl
 
   ## Automatic shared secret generation
   ## https://docs.gitlab.com/charts/installation/secrets
@@ -1229,6 +1221,14 @@ gitlab:
   ## Note: Many of these settings are configurable via globals
   gitlab:
     ## https://docs.gitlab.com/charts/charts/gitlab/toolbox
+    webservice:
+      ingress:
+        enabled: true
+        annotations:
+          cert-manager.io/cluster-issuer: nginx-ca
+        tls:
+          enabled: true
+          secretName: gitlab-ingress-ssl
     toolbox:
       enabled: false
       replicas: 1
