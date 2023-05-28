@@ -1188,7 +1188,7 @@ gitlab:
   ## Installation & configuration of gitlab/gitlab-runner
   ## See requirements.yaml for current version
   gitlab-runner:
-    # gitlabUrl: http://gitlab-webservice-default.gitlab:8080
+    gitlabUrl: http://gitlab-webservice-default.gitlab:8080
     certsSecretName: gitlab-ingress-ssl
     install: true
     rbac:
