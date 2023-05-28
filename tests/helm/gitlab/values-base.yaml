@@ -74,7 +74,7 @@ gitlab:
       enabled: true
       tls: 
         enabled: true
-        secretName: gitlab-ingress-ssl
+        # secretName: gitlab-ingress-ssl
       path: /
       pathType: Prefix
 
