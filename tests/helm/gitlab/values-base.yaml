@@ -1127,6 +1127,19 @@ gitlab:
   ## https://docs.gitlab.com/charts/charts/registry/
   registry:
     enabled: true
+    ingress:
+      apiVersion: ""
+      class: nginx
+      configureCertmanager: false
+      provider: nginx
+      annotations: 
+        cert-manager.io/cluster-issuer: nginx-ca
+      enabled: true
+      tls: 
+        enabled: true
+        secretName: registry-ingress-ssl
+      path: /
+      pathType: Prefix
 
   ## Automatic shared secret generation
   ## https://docs.gitlab.com/charts/installation/secrets
