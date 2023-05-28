@@ -71,10 +71,10 @@ gitlab:
       provider: nginx
       annotations: 
         cert-manager.io/cluster-issuer: nginx-ca
-      enabled: true
+      enabled: false
       tls: 
         enabled: true
-        # secretName: gitlab-ingress-ssl
+        secretName: gitlab-ingress-ssl
       path: /
       pathType: Prefix
 
