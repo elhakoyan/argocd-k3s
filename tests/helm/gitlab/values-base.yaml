@@ -55,12 +55,9 @@ gitlab:
       https: true
       externalIP:
       ssh: ~
-      gitlab: 
-        https: true 
-      minio: 
-        https: false
-      registry: 
-        https: false
+      gitlab: {}
+      minio: {}
+      registry: {}
       tls: {}
       smartcard: {}
       kas: {}
@@ -76,7 +73,7 @@ gitlab:
         cert-manager.io/cluster-issuer: nginx-ca
       enabled: true
       tls: 
-        enabled: false
+        enabled: true
         secretName: gitlab-ingress-ssl
       path: /
       pathType: Prefix
