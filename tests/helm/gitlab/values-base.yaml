@@ -625,7 +625,6 @@ gitlab:
         # events: {}
 
       # Settings utilized by other services referencing registry:
-      enabled: false
       host:
       # port: 443
       api:
@@ -1161,7 +1160,7 @@ gitlab:
   ## Installation & configuration of gitlab/gitlab-runner
   ## See requirements.yaml for current version
   gitlab-runner:
-    # gitlabUrl: http://gitlab.your-domain.com/
+    gitlabUrl: http://gitlab-webservice-default.gitlab
     # certsSecretName: gitlab-ingress-ssl
     install: true
     rbac:
