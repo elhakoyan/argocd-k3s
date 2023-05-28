@@ -1200,7 +1200,6 @@ gitlab:
       #     ]
       config: |
         [[runners]]
-          
           [runners.kubernetes]
           image = "ubuntu:22.04"
           {{- if .Values.global.minio.enabled }}
