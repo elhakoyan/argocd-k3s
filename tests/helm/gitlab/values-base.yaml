@@ -1188,18 +1188,19 @@ gitlab:
   ## Installation & configuration of gitlab/gitlab-runner
   ## See requirements.yaml for current version
   gitlab-runner:
-    gitlabUrl: http://gitlab-webservice-default.gitlab:8080
-    # certsSecretName: gitlab-ingress-ssl
+    # gitlabUrl: http://gitlab-webservice-default.gitlab:8080
+    certsSecretName: gitlab-ingress-ssl
     install: true
     rbac:
       create: true
     runners:
       locked: false
+      # environment = [
+      #       "GIT_SSL_NO_VERIFY=1"
+      #     ]
       config: |
         [[runners]]
-          environment = [
-            "GIT_SSL_NO_VERIFY=1"
-          ]
+          
           [runners.kubernetes]
           image = "ubuntu:22.04"
           {{- if .Values.global.minio.enabled }}
