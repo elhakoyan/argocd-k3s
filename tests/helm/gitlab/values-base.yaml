@@ -191,6 +191,13 @@ gitlab:
     ## https://docs.gitlab.com/charts/charts/globals#configure-minio-settings
     minio:
       enabled: true
+      ingress:
+        enabled: true
+        annotations:
+          cert-manager.io/cluster-issuer: nginx-ca
+        tls:
+          enabled: true
+          secretName: minio-ingress-ssl
       credentials: {}
         # secret:
 
@@ -600,8 +607,8 @@ gitlab:
         # secret:
         # key:
       tls:
-        enabled: false
-        # secretName:
+        enabled: true
+        secretName: registry-ingress-ssl
       redis:
         cache:
           password: {}
