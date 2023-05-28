@@ -1141,6 +1141,17 @@ gitlab:
       path: /
       pathType: Prefix
 
+  
+  minio:
+    enabled: true
+    ingress:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: nginx-ca
+      tls:
+        enabled: true
+        secretName: minio-ingress-ssl
+
   ## Automatic shared secret generation
   ## https://docs.gitlab.com/charts/installation/secrets
   ## https://docs.gitlab.com/charts/charts/shared-secrets.html
