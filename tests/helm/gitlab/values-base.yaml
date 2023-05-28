@@ -1192,7 +1192,7 @@ gitlab:
   gitlab:
     ## https://docs.gitlab.com/charts/charts/gitlab/toolbox
     toolbox:
-      enabled: true
+      enabled: false
       replicas: 1
       antiAffinityLabels:
         matchLabels:
