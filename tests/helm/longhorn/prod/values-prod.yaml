@@ -3,6 +3,6 @@ longhorn:
     replicaSoftAntiAffinity: true
     replicaZoneSoftAntiAffinity: true
   persistence:
-    defaultClassReplicaCount: 3
+    defaultClassReplicaCount: 2
 
 

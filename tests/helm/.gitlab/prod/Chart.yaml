@@ -1,8 +1,8 @@
 apiVersion: v2
-name: minio
+name: gitlab
 type: application
 version: 1.0.0
 dependencies:
-  - name: operator
-    version: "5.0.4"
-    repository: https://charts.gitlab.io/
+  - name: gitlab
+    version: "7.0.1"
+    repository: https://charts.gitlab.io

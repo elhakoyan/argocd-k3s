@@ -54,9 +54,12 @@ global:
     https: true
     externalIP:
     ssh: ~
-    gitlab: {}
-    minio: {}
-    registry: {}
+    gitlab: 
+      https: true 
+    minio: 
+      https: false
+    registry: 
+      https: false
     tls: {}
     smartcard: {}
     kas: {}
@@ -68,12 +71,11 @@ global:
     class: nginx
     configureCertmanager: false
     provider: nginx
-    # class:
     annotations: 
       cert-manager.io/cluster-issuer: nginx-ca
     enabled: true
     tls: 
-      enabled: true
+      enabled: false
       secretName: gitlab-ingress-ssl
     path: /
     pathType: Prefix
@@ -190,7 +192,7 @@ global:
 
   ## https://docs.gitlab.com/charts/charts/globals#configure-minio-settings
   minio:
-    enabled: true
+    enabled: false
     credentials: {}
       # secret:
 
@@ -584,12 +586,12 @@ global:
   ## Rails generic setting, applicable to all Rails-based containers
   rails:
     bootsnap: # Enable / disable Shopify/Bootsnap cache
-      enabled: true
+      enabled: false
 
   ## https://docs.gitlab.com/charts/charts/globals#configure-registry-settings
   registry:
     bucket: registry
-
+    enabled: false
     certificate: {}
       # secret:
     httpSecret: {}
@@ -1158,7 +1160,8 @@ shared-secrets:
 ## Installation & configuration of gitlab/gitlab-runner
 ## See requirements.yaml for current version
 gitlab-runner:
-  certsSecretName: gitlab-ingress-ssl
+  # gitlabUrl: http://gitlab.your-domain.com/
+  # certsSecretName: gitlab-ingress-ssl
   install: true
   rbac:
     create: true
