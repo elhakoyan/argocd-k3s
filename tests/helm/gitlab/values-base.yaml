@@ -600,7 +600,7 @@ gitlab:
         # secret:
         # key:
       tls:
-        enabled: true
+        enabled: false
         # secretName:
       redis:
         cache:
@@ -1119,7 +1119,7 @@ gitlab:
   ## https://docs.gitlab.com/charts/architecture/decisions#registry
   ## https://docs.gitlab.com/charts/charts/registry/
   registry:
-    enabled: false
+    enabled: true
 
   ## Automatic shared secret generation
   ## https://docs.gitlab.com/charts/installation/secrets
