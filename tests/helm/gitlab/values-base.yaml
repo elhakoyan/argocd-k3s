@@ -190,7 +190,7 @@ gitlab:
 
     ## https://docs.gitlab.com/charts/charts/globals#configure-minio-settings
     minio:
-      enabled: false
+      enabled: true
       credentials: {}
         # secret:
 
@@ -590,7 +590,7 @@ gitlab:
     ## https://docs.gitlab.com/charts/charts/globals#configure-registry-settings
     registry:
       bucket: registry
-      enabled: false
+      enabled: true
       certificate: {}
         # secret:
       httpSecret: {}
@@ -600,7 +600,7 @@ gitlab:
         # secret:
         # key:
       tls:
-        enabled: false
+        enabled: true
         # secretName:
       redis:
         cache:
