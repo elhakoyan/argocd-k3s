@@ -5,7 +5,7 @@ sonarqube:
       kubernetes.io/ingress.class: nginx
       cert-manager.io/cluster-issuer: nginx-ca
     hosts:
-    - sonarqube.example.org
+    - name: sonarqube.example.org
     tls:
     - secretName: sonarqube-ingress-tls
       hosts:
