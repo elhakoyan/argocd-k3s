@@ -1,5 +1,7 @@
 grafana:
   ingress:
     enabled: true
+    annotations:
+      kubernetes.io/ingress.provider: nginx
     hosts:
     - grafana.example.org  
