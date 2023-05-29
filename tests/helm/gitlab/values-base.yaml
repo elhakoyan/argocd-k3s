@@ -350,7 +350,7 @@ gitlab:
         bucket: gitlab-mr-diffs
         connection: {}
       terraformState:
-        enabled: false
+        enabled: true
         bucket: gitlab-terraform-state
         connection: {}
       ciSecureFiles:
