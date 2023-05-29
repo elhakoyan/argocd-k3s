@@ -309,7 +309,7 @@ gitlab:
 
       ## https://docs.gitlab.com/charts/charts/globals#lfs-artifacts-uploads-packages-external-mr-diffs-and-dependency-proxy
       object_store:
-        enabled: false
+        enabled: true
         proxy_download: true
         storage_options: {}
           # server_side_encryption:
@@ -325,26 +325,26 @@ gitlab:
           # secret:
           # key:
       artifacts:
-        enabled: false
+        enabled: true
         proxy_download: true
         bucket: gitlab-artifacts
         connection: {}
           # secret:
           # key:
       uploads:
-        enabled: false
+        enabled: true
         proxy_download: true
         bucket: gitlab-uploads
         connection: {}
           # secret:
           # key:
       packages:
-        enabled: false
+        enabled: true
         proxy_download: true
         bucket: gitlab-packages
         connection: {}
       externalDiffs:
-        enabled: false
+        enabled: true
         when:
         proxy_download: true
         bucket: gitlab-mr-diffs
