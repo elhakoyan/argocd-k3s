@@ -2,7 +2,7 @@ apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: cluster-example
-  namespace: harbor
+  namespace: default
 spec:
   instances: 3
   logLevel: trace
