@@ -14,4 +14,4 @@ sonarqube:
   caCerts:
     enabled: true
     image: adoptopenjdk/openjdk11:alpine
-    secret: nginx-ca
+    secret: ca
