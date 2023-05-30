@@ -10,3 +10,8 @@ sonarqube:
     - secretName: sonarqube-ingress-tls
       hosts:
       - sonarqube.example.org
+
+  caCerts:
+    enabled: true
+    image: adoptopenjdk/openjdk11:alpine
+    secret: nginx-ca
