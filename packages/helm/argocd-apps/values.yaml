@@ -55,7 +55,7 @@ applications:
     type: helmMultiSource
     revision: 0.18.0
     chart: cloudnative-pg
-    chartURL: "https://charts.jetstack.io"
+    chartURL: "https://cloudnative-pg.github.io/charts"
     # values: 
     #   0: 'sealed-secrets/base/values.yaml'
     #   1: 'sealed-secrets/prod/values.yaml'

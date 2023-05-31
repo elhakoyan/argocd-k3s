@@ -51,7 +51,7 @@ spec:
     targetRevision: HEAD
     ref: values
   {{ else }}
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: {{ default $.Values.global.repoURL $details.repoURL }}
     targetRevision: {{ default "HEAD" $details.revision }}
     path: {{ default $.Values.global.basePathPrefix $details.basePathPrefix }}{{ $details.path }}
     {{- if eq $details.type "kustomize" }}
