@@ -6,6 +6,10 @@ global:
   basePathPrefix: manifests/applications/
 
 applications:
+  argocd:
+    enabled: true
+    type: kustomize
+    path: "argocd"
   namespaces:
     enabled: true
     type: kustomize
@@ -51,7 +55,7 @@ applications:
       1: 'sealed-secrets/prod/values.yaml'
   cloudnative-pg:
     enabled: true
-    # namespace: "cloudnative-pg"
+    namespace: "cloudnative-pg"
     type: helmMultiSource
     revision: 0.18.0
     chart: cloudnative-pg
