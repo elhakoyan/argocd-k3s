@@ -29,3 +29,70 @@ applications:
     values: 
       0: 'cert-manager/base/values.yaml'
       1: 'cert-manager/prod/values.yaml'
+  etcd:
+    enabled: true
+    namespace: "etcd"
+    type: helmMultiSource
+    revision: 8.11.4
+    chartURL: "https://charts.jetstack.io"
+    chart: "etcd"
+    values: 
+      0: 'etcd/base/values.yaml'
+      1: 'etcd/prod/values.yaml'
+  sealed-secrets:
+    enabled: true
+    namespace: "sealed-secrets"
+    type: helmMultiSource
+    revision: 2.8.1
+    chart: sealed-secrets
+    chartURL: "https://bitnami-labs.github.io/sealed-secretshttps://bitnami-labs.github.io/sealed-secrets"
+    values: 
+      0: 'sealed-secrets/base/values.yaml'
+      1: 'sealed-secrets/prod/values.yaml'
+  cloudnative-pg:
+    enabled: true
+    # namespace: "cloudnative-pg"
+    type: helmMultiSource
+    revision: 0.18.0
+    chart: cloudnative-pg
+    chartURL: "https://charts.jetstack.io"
+    # values: 
+    #   0: 'sealed-secrets/base/values.yaml'
+    #   1: 'sealed-secrets/prod/values.yaml'
+  ingress-nginx:
+    enabled: true
+    # namespace: "ingress-nginx"
+    type: helmMultiSource
+    revision: 4.6.0
+    chart: ingress-nginx
+    chartURL: "https://kubernetes.github.io/ingress-nginx"
+    values: 
+       0: 'ingress-nginx/base/values.yaml'
+       1: 'ingress-nginx/prod/values.yaml'
+  minio-operator:
+    enabled: true
+    namespace: "minio"
+    type: helmMultiSource
+    revision: 5.0.4
+    chart: operator
+    chartURL: "https://operator.min.io/"
+  coredns:
+    enabled: true
+    # namespace: "ingress-nginx"
+    type: helmMultiSource
+    revision: 1.23.0
+    chart: coredns
+    chartURL: "https://coredns.github.io/helm"
+    values: 
+       0: 'coredns/base/values.yaml'
+       1: 'coredns/prod/values.yaml'
+  longhorn:
+    enabled: true
+    # namespace: "ingress-nginx"
+    type: helmMultiSource
+    revision: 1.4.1
+    chart: longhorn
+    chartURL: "https://charts.longhorn.io"
+    values: 
+       0: 'longhorn/base/values.yaml'
+       1: 'longhorn/prod/values.yaml'

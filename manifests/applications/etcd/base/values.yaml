@@ -1,0 +1,11 @@
+global:
+  storageClass: "directpv-min-io"
+replicaCount: 1
+persistence:
+  size: 1Gi
+
+auth:
+  rbac: 
+    create: false
+  token:
+    enabled: false

@@ -1,0 +1,22 @@
+- op: add
+  path: /spec/template/spec/dnsPolicy
+  value: "None"
+- op: add
+  path: /spec/template/spec/dnsConfig
+  value: {}
+- op: add
+  path: /spec/template/spec/dnsConfig/nameservers
+  value:
+    - 10.43.0.10
+    - 192.168.30.205
+- op: add
+  path: /spec/template/spec/dnsConfig/searches
+  value:
+    - argocd.svc.cluster.local
+    - svc.cluster.local 
+    - cluster.local
+- op: add
+  path: /spec/template/spec/dnsConfig/options
+  value:
+    - name: ndots
+      value: "5"
