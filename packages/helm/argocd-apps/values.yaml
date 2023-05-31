@@ -61,7 +61,7 @@ applications:
     #   1: 'sealed-secrets/prod/values.yaml'
   ingress-nginx:
     enabled: true
-    # namespace: "ingress-nginx"
+    namespace: "ingress-nginx"
     type: helmMultiSource
     revision: 4.6.0
     chart: ingress-nginx
@@ -78,7 +78,7 @@ applications:
     chartURL: "https://operator.min.io/"
   coredns:
     enabled: true
-    # namespace: "ingress-nginx"
+    namespace: "coredns"
     type: helmMultiSource
     revision: 1.23.0
     chart: coredns
@@ -87,8 +87,8 @@ applications:
        0: 'coredns/base/values.yaml'
        1: 'coredns/prod/values.yaml'
   longhorn:
-    enabled: true
-    # namespace: "ingress-nginx"
+    enabled: false
+    namespace: "longhorn"
     type: helmMultiSource
     revision: 1.4.1
     chart: longhorn
