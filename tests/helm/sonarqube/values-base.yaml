@@ -11,7 +11,7 @@ sonarqube:
       hosts:
       - sonarqube.example.org
 
-  caCerts:
-    enabled: true
-    image: adoptopenjdk/openjdk11:alpine
-    secret: ca
+  # caCerts:
+  #   enabled: true
+  #   image: adoptopenjdk/openjdk11:alpine
+  #   secret: ca

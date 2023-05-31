@@ -1,0 +1,86 @@
+{{- range $app, $details := .Values.applications }}
+{{- if $details.enabled }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $app }}
+  namespace: argocd 
+  annotations:
+  {{- $annotations := dict }}
+  {{- if $details.annotations }}
+    {{- $annotations = mustMergeOverwrite $.Values.global.annotations $details.annotations }}
+  {{- else }}
+    {{- $annotations = $.Values.global.annotations }}
+  {{- end }}
+  {{- range $key, $value := $annotations }}
+    {{ $key }}={{ $value }}
+  {{- end }}
+  labels:
+  {{- $labels := dict }}
+  {{- if $labels.annotations }}
+    {{- $labels = mustMergeOverwrite $.Values.global.labels $details.labels }}
+  {{- else }}
+    {{- $labels = $.Values.global.labels }}
+  {{- end }}
+  {{- range $key, $value := $labels }}
+    {{ $key }}={{ $value }}
+  {{- end }}
+spec:
+  project: {{ default "default" $details.project }}
+  destination:
+    server: https://kubernetes.default.svc
+    {{- if $details.namespace }}
+    namespace: {{ $details.namespace }}
+    {{- end }}
+  {{- if eq $details.type "helmMultiSource" }}
+  sources:
+  {{ else }}
+  source:
+  {{- if eq $details.type "helmMultiSource" }}
+  - repoURL: {{ $details.chartURL }}
+    chart: {{ $details.chart }}
+    targetRevision: {{ $details.revision }}
+    helm:
+      valueFiles:
+        {{- $sortedKeys := $details.values | keys | sortAlpha }}
+        {{- range $key := $sortedKeys }}
+        - $values/{{ default $.Values.global.basePathPrefix $details.basePathPrefix }}{{ index $details.values $key }}
+        {{- end }}
+  - repoURL: {{ default $.Values.global.repoURL $details.repoURL }}
+    targetRevision: HEAD
+    ref: values
+  {{ else }}
+    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    targetRevision: {{ default "HEAD" $details.revision }}
+    path: {{ default $.Values.global.basePathPrefix $details.basePathPrefix }}{{ $details.path }}
+    {{- if eq $details.type "kustomize" }}
+    kustomize:
+    {{- range $option, $value := $details.kustomize }}
+      {{ $option }}: {{ $value }}
+    {{- end }}
+    {{- else if eq $details.type "helmLocal" }}
+    helm:
+      valueFiles:
+        {{- $sortedKeys := $details.values | keys | sortAlpha }}
+        {{- range $key := $sortedKeys }}
+        - {{ default $.Values.global.basePathPrefix $details.basePathPrefix }}{{ index $details.values $key }}
+        {{- end }}
+    {{- end }}
+  {{- end }}
+  syncPolicy:
+    automated:
+      prune: {{ default true $details.prune }}
+      selfHeal: {{ default true $details.prune }}
+    syncOptions:
+      {{- $syncOptions := dict }}
+      {{- if $details.syncOptions }}
+        {{- $syncOptions = mustMergeOverwrite $.Values.global.syncOptions $details.syncOptions }}
+      {{- else }}
+        {{- $syncOptions = $.Values.global.syncOptions }}
+      {{- end }}
+      {{- range $key, $value := $syncOptions }}
+      - {{ $key }}={{ $value }}
+      {{- end }}
+---
+{{- end }}
+{{- end }}
