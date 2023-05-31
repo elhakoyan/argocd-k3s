@@ -10,15 +10,15 @@ applications:
     enabled: true
     type: kustomize
     env: prod
-    path: namespaces/env/prod
+    path: namespaces/prod
   secrets:
     enabled: true
     type: "raw"
-    path: "secrests/env/prod"
+    path: "secrests/prod"
   configmaps:
     enabled: true
     type: kustomize
-    path: "configmaps/env/prod"
+    path: "configmaps/prod"
   cert-manager:
     enabled: true
     namespace: "cert-manager"
