@@ -64,7 +64,7 @@ applications:
     #   0: 'sealed-secrets/base/values.yaml'
     #   1: 'sealed-secrets/prod/values.yaml'
   ingress-nginx:
-    enabled: true
+    enabled: false
     namespace: "ingress-nginx"
     type: helmMultiSource
     revision: 4.6.0
