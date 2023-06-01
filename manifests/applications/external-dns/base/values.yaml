@@ -1,4 +1,6 @@
 provider: coredns
+logLevel: debug
+policy: sync
 env:
   - name: ETCD_URLS
     value: http://etcd.etcd:2379
