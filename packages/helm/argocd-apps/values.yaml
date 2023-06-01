@@ -61,7 +61,7 @@ applications:
     type: helmMultiSource
     revision: 2.8.1
     chart: sealed-secrets
-    chartURL: "https://bitnami-labs.github.io/sealed-secretshttps://bitnami-labs.github.io/sealed-secrets"
+    chartURL: "https://bitnami-labs.github.io/sealed-secrets"
     values: 
       0: 'sealed-secrets/base/values.yaml'
       1: 'sealed-secrets/prod/values.yaml'
