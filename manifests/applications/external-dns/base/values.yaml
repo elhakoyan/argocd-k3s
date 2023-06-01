@@ -5,4 +5,4 @@ sources:
 - ingress
 env:
   - name: ETCD_URLS
-    value: http://etcd.etcd:2379
+    value: http://etcd-headless.etcd:2379
