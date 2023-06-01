@@ -12,6 +12,8 @@ applications:
     path: "argocd"
   namespaces:
     enabled: true
+    annotations:
+      argocd.argoproj.io/sync-wave: "-100"
     type: kustomize
     env: prod
     path: namespaces/prod
@@ -19,10 +21,14 @@ applications:
     enabled: true
     type: "raw"
     path: "secrests/prod"
+    annotations:
+      argocd.argoproj.io/sync-wave: "-10"
   configmaps:
     enabled: true
     type: kustomize
     path: "configmaps/prod"
+    annotations:
+      argocd.argoproj.io/sync-wave: "-10"
   cert-manager:
     enabled: true
     namespace: "cert-manager"
@@ -33,6 +39,12 @@ applications:
     values: 
       0: 'cert-manager/base/values.yaml'
       1: 'cert-manager/prod/values.yaml'
+  cert-manager-resources:
+    enabled: true
+    type: kustomize
+    path: "cert-manager-resources/prod"
+    annotations:
+      argocd.argoproj.io/sync-wave: "10"
   etcd:
     enabled: true
     namespace: "etcd"
@@ -100,3 +112,47 @@ applications:
     values: 
        0: 'longhorn/base/values.yaml'
        1: 'longhorn/prod/values.yaml'
+  prometheus-stack:
+    enabled: true
+    namespace: "prometheus"
+    type: helmMultiSource
+    revision: 46.4.1
+    chart: kube-prometheus-stack
+    chartURL: 'https://prometheus-community.github.io/helm-charts'
+    values: 
+       0: 'prometheus-stack/base/values.yaml'
+       1: 'prometheus-stack/prod/values.yaml'
+  sonarqube:
+    enabled: true
+    namespace: "sonarqube"
+    type: helmMultiSource
+    revision: "10.0.0+521"
+    chart: sonarqube
+    chartURL: https://SonarSource.github.io/helm-chart-sonarqube
+    values: 
+       0: 'sonarqube/base/values.yaml'
+       1: 'sonarqube/prod/values.yaml'
+  rook:
+    enabled: false
+    type: rook
+    path: "rook/prod"
+  external-dns:
+    enabled: true
+    namespace: "external-dns"
+    type: helmMultiSource
+    revision: "1.12.2"
+    chart: external-dns
+    chartURL: https://kubernetes-sigs.github.io/external-dns
+    values: 
+       0: 'external-dns/base/values.yaml'
+       1: 'external-dns/prod/values.yaml'
+  gitlab:
+    enabled: true
+    namespace: "gitlab"
+    type: helmMultiSource
+    revision: "7.0.1"
+    chart: gitlab
+    chartURL: https://charts.gitlab.io
+    values: 
+       0: 'gitlab/base/values.yaml'
+       1: 'gitlab/prod/values.yaml'

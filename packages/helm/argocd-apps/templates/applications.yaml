@@ -9,23 +9,27 @@ metadata:
   namespace: argocd 
   annotations:
   {{- $annotations := dict }}
-  {{- if $details.annotations }}
+  {{- if and $details.annotations  $.Values.global.annotations }}
     {{- $annotations = mustMergeOverwrite $.Values.global.annotations $details.annotations }}
+  {{- else if $details.annotations }}
+    {{- $annotations = $details.annotations }}
   {{- else }}
     {{- $annotations = $.Values.global.annotations }}
   {{- end }}
   {{- range $key, $value := $annotations }}
-    {{ $key }}={{ $value }}
+    {{ $key }}: {{ $value }}
   {{- end }}
   labels:
   {{- $labels := dict }}
-  {{- if $labels.annotations }}
+  {{- if and $details.labels  $.Values.global.labels }}
     {{- $labels = mustMergeOverwrite $.Values.global.labels $details.labels }}
+  {{- else if $details.annotations }}
+    {{- $labels = $details.annotations }}
   {{- else }}
     {{- $labels = $.Values.global.labels }}
   {{- end }}
   {{- range $key, $value := $labels }}
-    {{ $key }}={{ $value }}
+    {{ $key }}: {{ $value }}
   {{- end }}
 spec:
   project: {{ default "default" $details.project }}

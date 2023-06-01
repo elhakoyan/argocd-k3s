@@ -1,0 +1,4 @@
+provider: coredns
+env:
+  - name: ETCD_URLS
+    value: http://etcd.etcd:2379
