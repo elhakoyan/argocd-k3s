@@ -12,8 +12,8 @@ applications:
     path: "argocd"
   namespaces:
     enabled: true
-    annotations:
-      argocd.argoproj.io/sync-wave: "-100"
+    # annotations:
+    #   argocd.argoproj.io/sync-wave: "-100"
     type: kustomize
     env: prod
     path: namespaces/prod
@@ -21,14 +21,14 @@ applications:
     enabled: true
     type: "raw"
     path: "secrests/prod"
-    annotations:
-      argocd.argoproj.io/sync-wave: "-10"
+    # annotations:
+    #   argocd.argoproj.io/sync-wave: "-10"
   configmaps:
     enabled: true
     type: kustomize
     path: "configmaps/prod"
-    annotations:
-      argocd.argoproj.io/sync-wave: "-10"
+    # annotations:
+    #   argocd.argoproj.io/sync-wave: "-10"
   cert-manager:
     enabled: true
     namespace: "cert-manager"
@@ -43,8 +43,8 @@ applications:
     enabled: true
     type: kustomize
     path: "cert-manager-resources/prod"
-    annotations:
-      argocd.argoproj.io/sync-wave: "10"
+    # annotations:
+    #   argocd.argoproj.io/sync-wave: "10"
   etcd:
     enabled: true
     namespace: "etcd"
