@@ -1,6 +1,8 @@
 provider: coredns
 logLevel: debug
 policy: sync
+sources:
+- ingress
 env:
   - name: ETCD_URLS
     value: http://etcd.etcd:2379
