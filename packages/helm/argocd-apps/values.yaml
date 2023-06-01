@@ -139,7 +139,7 @@ applications:
     type: rook
     path: "rook/prod"
   external-dns:
-    enabled: true
+    enabled: false
     namespace: "external-dns"
     type: helmMultiSource
     revision: "1.12.2"
