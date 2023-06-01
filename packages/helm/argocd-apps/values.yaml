@@ -20,7 +20,7 @@ applications:
   secrets:
     enabled: true
     type: "raw"
-    path: "secrests/prod"
+    path: "secrets/prod"
     # annotations:
     #   argocd.argoproj.io/sync-wave: "-10"
   configmaps:
