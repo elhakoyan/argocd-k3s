@@ -10,7 +10,7 @@ metadata:
   annotations:
   {{- $annotations := dict }}
   {{- if and $details.annotations  $.Values.global.annotations }}
-    {{- $annotations = mustMergeOverwrite $.Values.global.annotations $details.annotations }}
+    {{- $annotations = mustMergeOverwrite $.Values.global.annotations | deepCopy $details.annotations }}
   {{- else if $details.annotations }}
     {{- $annotations = $details.annotations }}
   {{- else }}
@@ -22,7 +22,7 @@ metadata:
   labels:
   {{- $labels := dict }}
   {{- if and $details.labels  $.Values.global.labels }}
-    {{- $labels = mustMergeOverwrite $.Values.global.labels $details.labels }}
+    {{- $labels = mustMergeOverwrite $.Values.global.labels | deepCopy $details.labels }}
   {{- else if $details.annotations }}
     {{- $labels = $details.annotations }}
   {{- else }}
@@ -82,15 +82,17 @@ spec:
       prune: {{ default true $details.prune }}
       selfHeal: {{ default true $details.prune }}
     syncOptions:
-      {{- $syncOptions := dict }}
-      {{- if $details.syncOptions }}
-        {{- $syncOptions = mustMergeOverwrite $.Values.global.syncOptions $details.syncOptions }}
-      {{- else }}
-        {{- $syncOptions = $.Values.global.syncOptions }}
-      {{- end }}
-      {{- range $key, $value := $syncOptions }}
-      - {{ $key }}={{ $value }}
-      {{- end }}
+    {{- $syncOptions := dict }}
+    {{- if and $details.syncOptions  $.Values.global.syncOptions }}
+      {{- $syncOptions = mustMergeOverwrite $.Values.global.syncOptions | deepCopy $details.syncOptions }}
+    {{- else if $details.syncOptions }}
+      {{- $syncOptions = $details.syncOptions }}
+    {{- else }}
+      {{- $syncOptions = $.Values.global.syncOptions }}
+    {{- end }}
+    {{- range $key, $value := $syncOptions }}
+      {{ $key }}={{ $value }}
+    {{- end }}
 ---
 {{- end }}
 {{- end }}
