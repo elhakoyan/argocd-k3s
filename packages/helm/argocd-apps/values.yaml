@@ -1,8 +1,8 @@
 
 global:
   repoURL: "https://github.com/grig777/k3s-argocd-provisioning.git"
-  # syncOptions:
-  #   CreateNamespace: true
+  syncOptions:
+    CreateNamespace: true
   basePathPrefix: manifests/applications/
 
 applications:

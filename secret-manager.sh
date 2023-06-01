@@ -193,7 +193,7 @@ if [ -z "${OPERATION}" ]; then
   exit 1
 fi
 
-SECRET_DIR=${ROOT_PATH}/manifests/environments/${ENV}/secrets
+SECRET_DIR=${ROOT_PATH}/manifests/applications/secrets/${ENV}/
 SECRET_PATH="${SECRET_DIR}/${NAMESPACE}-${SECRET_NAME}".yaml
 
 case $OPERATION in
