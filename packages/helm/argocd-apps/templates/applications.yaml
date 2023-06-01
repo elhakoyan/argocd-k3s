@@ -91,7 +91,7 @@ spec:
       {{- $syncOptions = $.Values.global.syncOptions }}
     {{- end }}
     {{- range $key, $value := $syncOptions }}
-      {{ $key }}={{ $value }}
+    - {{ $key }}={{ $value }}
     {{- end }}
 ---
 {{- end }}
