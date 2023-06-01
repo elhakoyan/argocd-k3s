@@ -1,6 +1,7 @@
 provider: coredns
 logLevel: debug
 policy: sync
+namespaced: true
 sources:
 - ingress
 env:
