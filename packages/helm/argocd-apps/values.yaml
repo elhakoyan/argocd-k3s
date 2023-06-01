@@ -119,6 +119,8 @@ applications:
     revision: 46.4.1
     chart: kube-prometheus-stack
     chartURL: 'https://prometheus-community.github.io/helm-charts'
+    syncOptions:
+      ServerSideApply: true
     values: 
        0: 'prometheus-stack/base/values.yaml'
        1: 'prometheus-stack/prod/values.yaml'
