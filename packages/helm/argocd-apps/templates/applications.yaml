@@ -28,6 +28,9 @@ metadata:
   {{- else }}
     {{- $labels = $.Values.global.labels }}
   {{- end }}
+  {{- if $labels }}
+  labels:
+  {{- end }}
   {{- range $key, $value := $labels }}
     {{ $key }}: {{ $value }}
   {{- end }}
