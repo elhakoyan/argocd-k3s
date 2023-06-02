@@ -102,7 +102,6 @@ tenant:
   ## List of secret names to use for generating MinIO users during tenant provisioning
   users:
   - name: gitlab-minio-user
-  - name: gitlab-minio-user-1
   ## PodManagement policy for MinIO Tenant Pods. Can be "OrderedReady" or "Parallel"
   ## Refer https://kubernetes.io/docs/tutorials/stateful-application/basic-stateful-set/#pod-management-policy
   ## for details.

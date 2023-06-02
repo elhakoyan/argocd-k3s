@@ -318,50 +318,60 @@ gitlab:
           # secret:
           # key:
       lfs:
-        enabled: false
+        enabled: true
         proxy_download: true
         bucket: git-lfs
-        connection: {}
-          # secret:
-          # key:
+        connection: 
+          secret: gitlab-minio-rails
+          key: config
       artifacts:
         enabled: true
         proxy_download: true
         bucket: gitlab-artifacts
-        connection: {}
-          # secret:
-          # key:
+        connection: 
+          secret: gitlab-minio-rails
+          key: config
       uploads:
         enabled: true
         proxy_download: true
         bucket: gitlab-uploads
-        connection: {}
-          # secret:
-          # key:
+        connection: 
+          secret: gitlab-minio-rails
+          key: config
       packages:
         enabled: true
         proxy_download: true
         bucket: gitlab-packages
-        connection: {}
+        connection: 
+          secret: gitlab-minio-rails
+          key: config
       externalDiffs:
         enabled: true
         when:
         proxy_download: true
         bucket: gitlab-mr-diffs
-        connection: {}
+        connection: 
+          secret: gitlab-minio-rails
+          key: config
       terraformState:
         enabled: true
         bucket: gitlab-terraform-state
-        connection: {}
+        connection:
+          secret: gitlab-minio-rails
+          key: config
       ciSecureFiles:
         enabled: false
         bucket: gitlab-ci-secure-files
-        connection: {}
+        connection:
+          secret: gitlab-minio-rails
+          key: config
       dependencyProxy:
         enabled: false
         proxy_download: true
         bucket: gitlab-dependency-proxy
-        connection: {}
+        connection: 
+          secret: gitlab-minio-rails
+          key: config
 
       backups:
         bucket: gitlab-backups
@@ -1127,6 +1137,9 @@ gitlab:
   ## https://docs.gitlab.com/charts/charts/registry/
   registry:
     enabled: true
+    storage: 
+      secret: gitlab-minio-registery
+      key: config
     ingress:
       apiVersion: ""
       class: nginx
