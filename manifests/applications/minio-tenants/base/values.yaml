@@ -25,7 +25,6 @@ tenant:
     - servers: 3
       ## custom name for the pool
       name: pool-0
-      namespace: gitlab
       ## volumesPerServer specifies the number of volumes attached per MinIO Tenant Pod / Server.
       volumesPerServer: 1
       ## size specifies the capacity per volume
