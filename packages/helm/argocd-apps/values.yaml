@@ -168,5 +168,11 @@ applications:
     path: "postgresql-clusters/prod"
   minio-tenants:
     enabled: true
-    type: kustomize
-    path: "minio-tenants/prod"
+    namespace: "minio"
+    type: helmMultiSource
+    revision: 5.0.4
+    chart: operator
+    chartURL: "https://operator.min.io/"
+    values: 
+       0: 'minio-tenants/base/values.yaml'
+       1: 'minio-tenants/prod/values.yaml'
