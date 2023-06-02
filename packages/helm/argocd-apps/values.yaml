@@ -178,4 +178,4 @@ applications:
        1: 'minio-tenants/prod/values.yaml'
     additionalResources:
       jobs:
-        path: jobs/base/minio-gitlab-connection-secret-creation.yaml
+        path: jobs/base/
