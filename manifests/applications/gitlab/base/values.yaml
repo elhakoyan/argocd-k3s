@@ -1116,7 +1116,10 @@ registry:
   storage: 
     secret: gitlab-minio-registery
     key: config
-    
+    redirect:
+      disable: false
+
+
   ingress:
     apiVersion: ""
     class: nginx

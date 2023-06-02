@@ -147,7 +147,7 @@ tenant:
   priorityClassName: ""
 ingress:
   api:
-    enabled: false
+    enabled: true
     ingressClassName: "nginx"
     labels: { }
     tls:
