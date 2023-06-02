@@ -46,26 +46,3 @@ metadata:
 spec:
   ca:
     secretName: nginx-ca
-
----
-
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: gitlab-minio-cert
-  namespace: gitlab
-spec:
-  # isCA: false
-  duration: 87600h0m0s # 10 years
-  secretName: gitlab-minio-cert
-  commonName: "minio"
-  privateKey:
-    algorithm: ECDSA
-    size: 256
-  subject:
-    organizations:
-    - "minio.gitlab"
-  issuerRef:
-    name: selfsigned
-    kind: ClusterIssuer
-    group: cert-manager.io
