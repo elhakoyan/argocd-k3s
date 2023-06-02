@@ -122,7 +122,7 @@ tenant:
   # https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
   serviceAccountName: ""
   # Tenant scrape configuration will be added to prometheus managed by the prometheus-operator.
-  prometheusOperator: true
+  prometheusOperator: false
   # Enable JSON, Anonymous logging for MinIO tenants.
   # Refer https://github.com/minio/operator/blob/master/pkg/apis/minio.min.io/v2/types.go#L303
   # How logs will look:
