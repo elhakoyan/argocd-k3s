@@ -165,14 +165,14 @@ global:
 
   ## https://docs.gitlab.com/charts/charts/globals#configure-minio-settings
   minio:
-    enabled: false
+    enabled: true
     ingress:
       enabled: true
       annotations:
         cert-manager.io/cluster-issuer: nginx-ca
       tls:
         enabled: true
-        secretName: minio-ingress-ssl
+        secretName: minio-ingress-tls
     credentials: {}
       # secret:
 
@@ -284,70 +284,70 @@ global:
 
     ## https://docs.gitlab.com/charts/charts/globals#lfs-artifacts-uploads-packages-external-mr-diffs-and-dependency-proxy
     object_store:
-      enabled: false
+      enabled: true
       proxy_download: true
       bucket: gitlab-uploads-storage
       storage_options: {}
         # server_side_encryption:
         # server_side_encryption_kms_key_id
-      connection: 
-        secret: gitlab-minio-rails
-        key: config
+      connection: {}
+        # secret: gitlab-minio-rails
+        # key: config
     lfs:
       enabled: false
       proxy_download: true
       bucket: gitlab-lfs-storage
-      connection:
-        secret: gitlab-minio-rails
-        key: config
+      connection: {}
+        # secret: gitlab-minio-rails
+        # key: config
     artifacts:
       enabled: true
       proxy_download: true
       bucket: gitlab-artifacts-storage
-      connection: 
-        secret: gitlab-minio-rails
-        key: config
+      connection: {}
+        # secret: gitlab-minio-rails
+        # key: config
     uploads:
       enabled: true
       proxy_download: true
       bucket: gitlab-uploads-storage
-      connection: 
-        secret: gitlab-minio-rails
-        key: config
+      connection: {}
+        # secret: gitlab-minio-rails
+        # key: config
     packages:
       enabled: true
       proxy_download: true
       bucket: gitlab-packages-storage
-      connection:
-        secret: gitlab-minio-rails
-        key: config
+      connection: {}
+        # secret: gitlab-minio-rails
+        # key: config
     externalDiffs:
       enabled: true
       when:
       proxy_download: true
       bucket: gitlab-mr-diffs
-      connection: 
-        secret: gitlab-minio-rails
-        key: config
+      connection: {}
+        # secret: gitlab-minio-rails
+        # key: config
     terraformState:
       enabled: true
       bucket: gitlab-terraform-state
-      connection: 
-        secret: gitlab-minio-rails
-        key: config
+      connection: {}
+        # secret: gitlab-minio-rails
+        # key: config
     ciSecureFiles:
       enabled: false
       bucket: gitlab-ci-secure-files
-      connection: 
-        secret: gitlab-minio-rails
-        key: config
+      connection: {}
+        # secret: gitlab-minio-rails
+        # key: config
     dependencyProxy:
       enabled: false
       proxy_download: true
       bucket: gitlab-dependency-proxy
-      connection: 
-        secret: gitlab-minio-rails
-        key: config
+      connection: {}
+        # secret: gitlab-minio-rails
+        # key: config
 
     backups:
       bucket: gitlab-backups
@@ -1136,7 +1136,7 @@ registry:
 
 minio:
   ingress:
-    enabled: false
+    enabled: true
     annotations:
       cert-manager.io/cluster-issuer: nginx-ca
     tls:
