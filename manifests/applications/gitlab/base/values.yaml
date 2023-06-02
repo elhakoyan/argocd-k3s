@@ -737,11 +737,11 @@ global:
       # tag: master
       # pullPolicy: IfNotPresent
       # pullSecrets: []
-    customCAs: []
+    customCAs: 
     # - secret: custom-CA
-    # - secret: more-custom-CAs
-    #   keys:
-    #     - custom-ca-1.crt
+    - secret: more-custom-CAs
+      keys:
+        - custom-ca-1.crt
     # - configMap: custom-CA-cm
     # - configMap: more-custom-CAs-cm
     #   keys:
