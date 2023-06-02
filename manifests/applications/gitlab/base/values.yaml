@@ -165,7 +165,7 @@ global:
 
   ## https://docs.gitlab.com/charts/charts/globals#configure-minio-settings
   minio:
-    enabled: true
+    enabled: false
     ingress:
       enabled: true
       annotations:
@@ -290,9 +290,9 @@ global:
       storage_options: {}
         # server_side_encryption:
         # server_side_encryption_kms_key_id
-      connection: {}
-        # secret: gitlab-minio-rails
-        # key: config
+      connection: 
+        secret: gitlab-minio-rails
+        key: config
     lfs:
       enabled: false
       proxy_download: true
