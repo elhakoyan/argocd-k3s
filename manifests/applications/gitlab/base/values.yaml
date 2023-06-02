@@ -739,13 +739,13 @@ global:
       # pullSecrets: []
     customCAs: 
     # - secret: custom-CA
-    - secret: more-custom-CAs
+    - secret: gitlab-minio-cert
       keys:
-        - custom-ca-1.crt
+        - ca.crt
     # - configMap: custom-CA-cm
     # - configMap: more-custom-CAs-cm
     #   keys:
-    #     - custom-ca-2.crt
+    #     - ca.crt
     #     - custom-ca-3.crt
 
   ## kubectl image used by hooks to carry out specific jobs
