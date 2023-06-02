@@ -89,15 +89,15 @@ global:
     keepalivesInterval:
     keepalivesCount:
     tcpUserTimeout:
-    password: {}
+    password: 
       # useSecret:
-      # secret:
-      # key:
+      secret: gitlab-psql-app
+      key: password
       # file:
-    # host: postgresql.hostedsomewhere.else
-    # port: 123
-    # username: gitlab
-    # database: gitlabhq_production
+    host: gitlab-psql-rw.gitlab
+    port: "5432"
+    username: gitlab
+    database: gitlab
     # applicationName:
     # preparedStatements: false
     # databaseTasks: true
@@ -1062,7 +1062,7 @@ redis:
 ## Installation & configuration of stable/prostgresql
 ## See requirements.yaml for current version
 postgresql:
-  install: true
+  install: false
   auth:
     ## These need to be set, for the sake of bitnami/postgresql upgrade patterns.
     ## They are overridden by use of `existingSecret`
