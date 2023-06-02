@@ -162,9 +162,9 @@ applications:
     values: 
        0: 'gitlab/base/values.yaml'
        1: 'gitlab/prod/values.yaml'
-    additionalResources:
-      jobs:
-        path: jobs/base/
+    # additionalResources:
+    #   jobs:
+    #     path: jobs/base/
   postgresql-clusters:
     enabled: true
     type: kustomize
