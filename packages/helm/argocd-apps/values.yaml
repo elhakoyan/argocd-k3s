@@ -117,7 +117,7 @@ applications:
        0: 'longhorn/base/values.yaml'
        1: 'longhorn/prod/values.yaml'
   prometheus-stack:
-    enabled: true
+    enabled: false
     namespace: "prometheus"
     type: helmMultiSource
     revision: 46.4.1
@@ -129,7 +129,7 @@ applications:
        0: 'prometheus-stack/base/values.yaml'
        1: 'prometheus-stack/prod/values.yaml'
   sonarqube:
-    enabled: true
+    enabled: false
     namespace: "sonarqube"
     type: helmMultiSource
     revision: "10.0.0+521"
