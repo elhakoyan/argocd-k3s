@@ -94,8 +94,8 @@ applications:
     chart: operator
     chartURL: "https://operator.min.io/"
     values: 
-       0: 'ingress-nginx/base/values.yaml'
-       1: 'ingress-nginx/prod/values.yaml'
+       0: 'minio-operator/base/values.yaml'
+       1: 'minio-operator/prod/values.yaml'
   coredns:
     enabled: true
     namespace: "coredns"
