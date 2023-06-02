@@ -1113,11 +1113,11 @@ postgresql:
 ## https://docs.gitlab.com/charts/charts/registry/
 registry:
   enabled: true
-  storage: 
-    secret: gitlab-minio-registery
-    key: config
-    redirect:
-      disable: true
+  # storage: 
+  #   secret: gitlab-minio-registery
+  #   key: config
+  #   redirect:
+  #     disable: true
 
 
   ingress:
