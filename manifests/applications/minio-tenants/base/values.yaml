@@ -99,6 +99,8 @@ tenant:
   - name: gitlab-uploads-storage
   - name: gitlab-packages-storage
   - name: gitlab-backup-storage
+  - name: gitlab-terraform-state
+  - name: gitlab-mr-diffs
   ## List of secret names to use for generating MinIO users during tenant provisioning
   users:
   - name: gitlab-minio-user
