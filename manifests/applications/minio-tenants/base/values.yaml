@@ -155,6 +155,18 @@ ingress:
       secretName: minio-gitlab-api-ingress-tls
     annotations:
       cert-manager.io/cluster-issuer: nginx-ca
+      nginx.ingress.kubernetes.io/client-body-buffer-size: 64k
+      nginx.ingress.kubernetes.io/client-header-buffer-size: 100k
+      nginx.ingress.kubernetes.io/http2-max-header-size: 96k
+      nginx.ingress.kubernetes.io/large-client-header-buffers: 4 100k
+      nginx.ingress.kubernetes.io/proxy-buffer-size: 96k
+      nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+      kubernetes.io/ingress.class: "nginx"
+      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/secure-backends: "true"
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     host: minio-gitlab-api.example.org
     path: /
     pathType: Prefix
@@ -168,6 +180,18 @@ ingress:
       secretName: minio-gitlab-console-ingress-tls
     annotations:
       cert-manager.io/cluster-issuer: nginx-ca
+      nginx.ingress.kubernetes.io/client-body-buffer-size: 64k
+      nginx.ingress.kubernetes.io/client-header-buffer-size: 100k
+      nginx.ingress.kubernetes.io/http2-max-header-size: 96k
+      nginx.ingress.kubernetes.io/large-client-header-buffers: 4 100k
+      nginx.ingress.kubernetes.io/proxy-buffer-size: 96k
+      nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+      kubernetes.io/ingress.class: "nginx"
+      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/secure-backends: "true"
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     host: minio-gitlab-console.example.org
     path: /
     pathType: Prefix
