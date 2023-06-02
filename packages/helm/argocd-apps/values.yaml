@@ -93,6 +93,9 @@ applications:
     revision: 5.0.4
     chart: operator
     chartURL: "https://operator.min.io/"
+    values: 
+       0: 'ingress-nginx/base/values.yaml'
+       1: 'ingress-nginx/prod/values.yaml'
   coredns:
     enabled: true
     namespace: "coredns"
@@ -163,3 +166,7 @@ applications:
     enabled: true
     type: kustomize
     path: "postgresql-clusters/prod"
+  minio-tenants:
+    enabled: true
+    type: kustomize
+    path: "minio-tenants/prod"
