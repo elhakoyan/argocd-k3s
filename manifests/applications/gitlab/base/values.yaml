@@ -282,13 +282,6 @@ global:
       googleTagManagerNonceId:
       bizible:
 
-      name: gitlab-registry-storage
-  - name: gitlab-lfs-storage
-  - name: gitlab-artifacts-storage
-  - name: gitlab-uploads-storage
-  - name: gitlab-packages-storage
-  - name: gitlab-backup-storage
-
     ## https://docs.gitlab.com/charts/charts/globals#lfs-artifacts-uploads-packages-external-mr-diffs-and-dependency-proxy
     object_store:
       enabled: true
