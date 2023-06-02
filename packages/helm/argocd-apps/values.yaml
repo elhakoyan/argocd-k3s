@@ -162,6 +162,9 @@ applications:
     values: 
        0: 'gitlab/base/values.yaml'
        1: 'gitlab/prod/values.yaml'
+    additionalResources:
+      jobs:
+        path: jobs/base/
   postgresql-clusters:
     enabled: true
     type: kustomize
@@ -176,6 +179,4 @@ applications:
     values: 
        0: 'minio-tenants/base/values.yaml'
        1: 'minio-tenants/prod/values.yaml'
-    additionalResources:
-      jobs:
-        path: jobs/base/
+    
