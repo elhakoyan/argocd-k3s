@@ -4,6 +4,7 @@ global:
   syncOptions:
     CreateNamespace: true
   basePathPrefix: manifests/applications/
+  environment: prod
 
 applications:
   argocd:
@@ -103,7 +104,7 @@ applications:
        0: 'coredns/base/values.yaml'
        1: 'coredns/prod/values.yaml'
   longhorn:
-    enabled: false
+    enabled: true
     namespace: "longhorn"
     type: helmMultiSource
     revision: 1.4.1
@@ -158,3 +159,7 @@ applications:
     values: 
        0: 'gitlab/base/values.yaml'
        1: 'gitlab/prod/values.yaml'
+  postgresql-clusters:
+    enabled: true
+    type: kustomize
+    path: "postgresql-clusters/prod"

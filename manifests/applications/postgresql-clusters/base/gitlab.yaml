@@ -1,8 +1,8 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-  name: cluster-example
-  namespace: default
+  name: gitlab-postgresql
+  namespace: gitlab
 spec:
   instances: 3
   logLevel: trace
@@ -19,4 +19,7 @@ spec:
   storage:
     size: 1Gi
     storageClass: directpv-min-io
+  bootstrapInitDB:
+    database: gitlab
+    owner: gitlab
     
