@@ -55,7 +55,7 @@ metadata:
   name: gitlab-minio-cert
   namespace: gitlab
 spec:
-  isCA: false
+  # isCA: false
   duration: 87600h0m0s # 10 years
   secretName: gitlab-minio-cert
   commonName: "minio"
