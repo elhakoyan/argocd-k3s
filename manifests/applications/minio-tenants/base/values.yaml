@@ -1,7 +1,6 @@
 tenant:
   # Tenant name
   name: gitlab-minio
-  namespace: gitlab
   ## Registry location and Tag to download MinIO Server image
   image:
     repository: quay.io/minio/minio

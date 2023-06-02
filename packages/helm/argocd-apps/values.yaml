@@ -168,7 +168,7 @@ applications:
     path: "postgresql-clusters/prod"
   minio-tenants:
     enabled: true
-    namespace: "minio"
+    namespace: "gitlab"
     type: helmMultiSource
     revision: 5.0.4
     chart: operator
