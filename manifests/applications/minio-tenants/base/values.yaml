@@ -25,7 +25,7 @@ tenant:
       ## custom name for the pool
       name: pool-0
       ## volumesPerServer specifies the number of volumes attached per MinIO Tenant Pod / Server.
-      volumesPerServer: 1
+      volumesPerServer: 2
       ## size specifies the capacity per volume
       size: 1Gi
       ## storageClass specifies the storage class name to be used for this pool
