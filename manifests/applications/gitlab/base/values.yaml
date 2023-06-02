@@ -1117,7 +1117,7 @@ registry:
     secret: gitlab-minio-registery
     key: config
     redirect:
-      disable: false
+      disable: true
 
 
   ingress:
