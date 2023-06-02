@@ -171,7 +171,7 @@ applications:
     namespace: "gitlab"
     type: helmMultiSource
     revision: 5.0.4
-    chart: operator
+    chart: tenant
     chartURL: "https://operator.min.io/"
     values: 
        0: 'minio-tenants/base/values.yaml'
