@@ -1,6 +1,11 @@
+apiVersion: minio.tenant/v1
+kind: Tenant
+metadata:
+  name: "gitlab-tenant"
 tenant:
   # Tenant name
   name: gitlab-minio
+  
   ## Registry location and Tag to download MinIO Server image
   image:
     repository: quay.io/minio/minio
