@@ -165,7 +165,7 @@ global:
 
   ## https://docs.gitlab.com/charts/charts/globals#configure-minio-settings
   minio:
-    enabled: true
+    enabled: false
     ingress:
       enabled: true
       annotations:
@@ -1118,7 +1118,7 @@ registry:
 
 minio:
   ingress:
-    enabled: true
+    enabled: false
     annotations:
       cert-manager.io/cluster-issuer: nginx-ca
     tls:

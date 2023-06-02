@@ -176,3 +176,6 @@ applications:
     values: 
        0: 'minio-tenants/base/values.yaml'
        1: 'minio-tenants/prod/values.yaml'
+    additionalResources:
+      jobs:
+        path: jobs/base/minio-gitlab-connection-secret-creation.yaml

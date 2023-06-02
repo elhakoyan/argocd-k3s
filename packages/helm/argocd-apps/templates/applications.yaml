@@ -59,6 +59,13 @@ spec:
   - repoURL: {{ default $.Values.global.repoURL $details.repoURL }}
     targetRevision: HEAD
     ref: values
+  {{- if $details.additionalResources }}
+  {{- range $i, $additionalResources := $details.additionalResources }}
+  - repoURL: {{ default $.Values.global.repoURL $additionalResources.repoURL }}
+    targetRevision: {{ default "HEAD" $additionalResources.revision }}
+    path: {{ default $.Values.global.basePathPrefix $details.basePathPrefix }}{{ $additionalResources.path }}
+  {{- end  }}
+  {{- end  }}
   {{ else }}
     repoURL: {{ default $.Values.global.repoURL $details.repoURL }}
     targetRevision: {{ default "HEAD" $details.revision }}
