@@ -170,7 +170,7 @@ applications:
     type: kustomize
     path: "postgresql-clusters/prod"
   minio-tenants:
-    enabled: true
+    enabled: false
     namespace: "gitlab"
     type: helmMultiSource
     revision: 5.0.4
