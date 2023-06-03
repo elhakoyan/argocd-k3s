@@ -1197,6 +1197,9 @@ gitlab-runner:
         ]
         [runners.kubernetes]
         image = "ubuntu:22.04"
+        [[runners.kubernetes.volumes.secret]]
+        name = "gitlab-minio-tls"
+        mount_path = "/etc/gitlab-runner/certs/ca.crt"
         [runners.cache]
           Type = "s3"
           Shared = true
@@ -1205,6 +1208,7 @@ gitlab-runner:
             BucketName = "gitlab-runner-cache"
             BucketLocation = "us-east-1"
             Insecure = false
+        
   podAnnotations:
     gitlab.com/prometheus_scrape: "true"
     gitlab.com/prometheus_port: 9252
