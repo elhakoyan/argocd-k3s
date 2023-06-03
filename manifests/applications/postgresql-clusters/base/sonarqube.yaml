@@ -2,7 +2,7 @@ apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: sonarqube-psql
-  namespace: gitlab
+  namespace: sonarqube
 spec:
   instances: 2
   logLevel: trace
