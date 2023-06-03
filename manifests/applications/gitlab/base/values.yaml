@@ -1202,8 +1202,9 @@ gitlab-runner:
             ServerAddress = "minio.gitlab"
             BucketName = "gitlab-runner-cache"
             BucketLocation = "us-east-1"
+            AccessKey = "tK33J43SfAsUYCyzbDxT"
+            SecretKey = "xdVU8tx7foDMLwN6iMd7rDflBNVie55Rbwq2pMZm"
             Insecure = false
-            SecretName = "gitlab-runner-minio-credentials"
   podAnnotations:
     gitlab.com/prometheus_scrape: "true"
     gitlab.com/prometheus_port: 9252
