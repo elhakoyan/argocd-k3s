@@ -1203,7 +1203,7 @@ gitlab-runner:
             BucketName = "gitlab-runner-cache"
             BucketLocation = "us-east-1"
             Insecure = false
-            secretName = "gitlab-runner-minio-credentials"
+            SecretName = "gitlab-runner-minio-credentials"
   podAnnotations:
     gitlab.com/prometheus_scrape: "true"
     gitlab.com/prometheus_port: 9252
