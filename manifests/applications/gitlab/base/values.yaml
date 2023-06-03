@@ -1188,6 +1188,8 @@ gitlab-runner:
     create: true
   runners:
     locked: false
+    cache:
+      secretName: gitlab-runner-minio-credentials
     config: |
       [[runners]]
         environment = [
@@ -1202,8 +1204,6 @@ gitlab-runner:
             ServerAddress = "minio.gitlab"
             BucketName = "gitlab-runner-cache"
             BucketLocation = "us-east-1"
-            AccessKey = "tK33J43SfAsUYCyzbDxT"
-            SecretKey = "xdVU8tx7foDMLwN6iMd7rDflBNVie55Rbwq2pMZm"
             Insecure = false
   podAnnotations:
     gitlab.com/prometheus_scrape: "true"
