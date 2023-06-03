@@ -1199,10 +1199,10 @@ gitlab-runner:
           Type = "s3"
           Shared = true
           [runners.cache.s3]
-            ServerAddress = "https://minio.gitlab"
+            ServerAddress = "minio.gitlab"
             BucketName = "gitlab-runner-cache"
             BucketLocation = "us-east-1"
-            Insecure = true
+            Insecure = false
             secretName = "gitlab-runner-minio-credentials"
   podAnnotations:
     gitlab.com/prometheus_scrape: "true"
