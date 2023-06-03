@@ -1200,10 +1200,10 @@ gitlab-runner:
           Path = "gitlab-runner"
           Shared = true
           [runners.cache.s3]
-            s3ServerAddress = "minio.gitlab"
-            s3BucketName = "gitlab-runner-cache"
-            s3BucketLocation = "us-east-1"
-            s3Insecure = false
+            ServerAddress = "minio.gitlab"
+            BucketName = "gitlab-runner-cache"
+            BucketLocation = "us-east-1"
+            Insecure = false
             secretName = gitlab-runner-minio-credentials
   podAnnotations:
     gitlab.com/prometheus_scrape: "true"
