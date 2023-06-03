@@ -1016,10 +1016,10 @@ gitlab-runner:
         environment = [
           "GIT_SSL_NO_VERIFY=1"
         ]
-         pre_get_sources_script = """
-                          cp /etc/gitlab-runner/certs/ca.crt /usr/local/share/ca-certificates/ca.crt
-                          update-ca-certificates --fresh >/dev/null 2>/dev/null
-                          """
+        pre_get_sources_script = """
+          cp /etc/gitlab-runner/certs/ca.crt /usr/local/share/ca-certificates/ca.crt
+          update-ca-certificates --fresh >/dev/null 2>/dev/null
+          """
         [runners.kubernetes]
         image = "ubuntu:22.04"
         [[runners.kubernetes.volumes.secret]]
