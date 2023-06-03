@@ -1199,7 +1199,7 @@ gitlab-runner:
         image = "ubuntu:22.04"
         [[runners.kubernetes.volumes.secret]]
         name = "gitlab-minio-tls"
-        mount_path = "/etc/gitlab-runner/certs/ca.crt"
+        mount_path = "/etc/gitlab-runner/certs/"
         [runners.cache]
           Type = "s3"
           Shared = true
