@@ -54,6 +54,12 @@ spec:
   duration: 87600h0m0s # 10 years
   secretName: gitlab-minio-cert
   commonName: "minio"
+  dnsNames:
+  - minio
+  - minio.gitlab
+  - minio.gitlab.svc
+  - minio.gitlab.svc.cluster
+  - minio.gitlab.svc.cluster.local
   privateKey:
     algorithm: ECDSA
     size: 256
