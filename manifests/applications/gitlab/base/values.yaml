@@ -1195,17 +1195,16 @@ gitlab-runner:
         ]
         [runners.kubernetes]
         image = "ubuntu:22.04"
-        {{- if .Values.global.minio.enabled }}
         [runners.cache]
           Type = "s3"
           Path = "gitlab-runner"
           Shared = true
           [runners.cache.s3]
-            ServerAddress = {{ include "gitlab-runner.cache-tpl.s3ServerAddress" . }}
-            BucketName = "runner-cache"
+            ServerAddress = "minio.gitlab"
+            BucketName = "gitlab-runner-cache"
             BucketLocation = "us-east-1"
             Insecure = false
-        {{ end }}
+            secretName: gitlab-runner-minio-credentials
   podAnnotations:
     gitlab.com/prometheus_scrape: "true"
     gitlab.com/prometheus_port: 9252
