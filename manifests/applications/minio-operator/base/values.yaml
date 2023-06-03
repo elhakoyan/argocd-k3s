@@ -12,5 +12,16 @@ console:
     host: minio-operator.example.org
     path: /
     pathType: Prefix
-  volumes: [ ]
-  volumeMounts: [ ]
+  volumes:
+  - name: tls-certificates
+    projected:
+      defaultMode: 420
+      sources:
+        - secret:
+            items:
+              - key: ca.crt
+                path: CAs/custom-public.crt
+            name: gitlab-minio-cert
+  volumeMounts:
+  - mountPath: /tmp/certs
+    name: tls-certificates

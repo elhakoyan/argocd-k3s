@@ -739,9 +739,9 @@ global:
       # pullSecrets: []
     customCAs: 
     # - secret: custom-CA
-    - secret: gitlab-minio-tls
+    - secret: gitlab-minio-cert
       keys:
-        - public.crt
+        - ca.crt
     # - configMap: custom-CA-cm
     # - configMap: more-custom-CAs-cm
     #   keys:
