@@ -185,4 +185,4 @@ applications:
     type: helmMultiSource
     revision: 7.0.173
     chart: reflector
-    chartURL: "https://emberstack.github.io/helm-chartshttps://emberstack.github.io/helm-charts"
+    chartURL: "https://emberstack.github.io/helm-charts"
