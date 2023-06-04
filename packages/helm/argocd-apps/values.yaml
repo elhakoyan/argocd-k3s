@@ -208,7 +208,7 @@ applications:
     enabled: true
     namespace: "rocketchat"
     type: helmMultiSource
-    revision: 1.12.0
+    revision: 6.2.1
     chart: rocketchat
     chartURL: "rocketchat https://rocketchat.github.io/helm-charts"
     values: 
