@@ -224,6 +224,7 @@ applications:
        0: 'opensearch-operator/base/values.yaml'
   opensearch-cluster:
     enabled: true
+    namespace: opensearch
     type: raw
     path: opensearch-clusters/base
   eck-operator: 
