@@ -10,3 +10,5 @@ ingress:
    - secretName: rocketchat-ingress-tls
      hosts:
        - rocketchat.example.org
+
+registrationToken: f8be8f73-5d25-4acd-8ca7-1368b96cfc31
