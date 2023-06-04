@@ -254,5 +254,6 @@ applications:
     type: kustomize
     namespace: "fluent-bit"
     repoURL: https://github.com/fluent/fluent-operator
-    # path: manifests/setup
+    basePathPrefix: manifests/
+    path: /setup
     revision: release-2.2
