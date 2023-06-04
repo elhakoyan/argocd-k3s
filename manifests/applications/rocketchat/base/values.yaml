@@ -1,3 +1,4 @@
+# https://github.com/RocketChat/helm-charts/blob/master/rocketchat/values.yaml
 host: rocketchat.example.org
 ingress:
   enabled: true

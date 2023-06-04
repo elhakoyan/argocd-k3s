@@ -180,14 +180,14 @@ applications:
        0: 'minio-tenants/base/values.yaml'
        1: 'minio-tenants/prod/values.yaml'
   reflector:
-    enabled: true
+    enabled: false
     namespace: "reflector"
     type: helmMultiSource
     revision: 7.0.173
     chart: reflector
     chartURL: "https://emberstack.github.io/helm-charts"
   jira:
-    enabled: true
+    enabled: false
     namespace: "jira"
     type: helmMultiSource
     revision: 1.12.0
@@ -196,7 +196,7 @@ applications:
     values: 
        0: 'jira/base/values.yaml'
   confluence:
-    enabled: true
+    enabled: false
     namespace: "confluence"
     type: helmMultiSource
     revision: 1.12.0
@@ -205,7 +205,7 @@ applications:
     values: 
        0: 'confluence/base/values.yaml'
   rocketchat:
-    enabled: true
+    enabled: false
     namespace: "rocketchat"
     type: helmMultiSource
     revision: 6.2.1
@@ -213,3 +213,39 @@ applications:
     chartURL: "https://rocketchat.github.io/helm-charts"
     values: 
        0: 'rocketchat/base/values.yaml'
+  opensearch-operator:
+    enabled: false
+    namespace: "opensearch"
+    type: helmMultiSource
+    revision: 6.2.1
+    chart: opensearch-operator
+    chartURL: "https://opster.github.io/opensearch-k8s-operator/"
+    values: 
+       0: 'opensearch-operator/base/values.yaml'
+  opensearch-cluster:
+    enabled: false
+    namespace: "opensearch"
+    type: helmMultiSource
+    revision: 6.2.1
+    chart: opensearch-cluster
+    chartURL: "https://opster.github.io/opensearch-k8s-operator/"
+    values: 
+       0: 'opensearch-cluster/base/values.yaml'
+  eck-operator: 
+    enabled: true
+    namespace: "elasticsearch"
+    type: helmMultiSource
+    revision: 6.2.1
+    chart: 2.9.0-SNAPSHOT
+    chartURL: "https://helm.elastic.co"
+    # values: 
+    #    0: 'eck-operator/base/values.yaml'
+  eck-stack: 
+    enabled: true
+    namespace: "elasticsearch"
+    type: helmMultiSource
+    revision: 6.2.1
+    chart: 0.6.0-SNAPSHOT
+    chartURL: "https://helm.elastic.co"
+    values: 
+        0: 'eck-stack/base/values.yaml'
