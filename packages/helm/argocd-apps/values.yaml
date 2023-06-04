@@ -252,7 +252,7 @@ applications:
   fluent-operator:
     enabled: true
     type: kustomize
-    namespace: "fluent-bit"
+    namespace: "fluent"
     repoURL: https://github.com/fluent/fluent-operator
     basePathPrefix: manifests/
     path: /setup
