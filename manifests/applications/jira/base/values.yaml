@@ -166,7 +166,7 @@ volumes:
       # -- If 'true', then a 'PersistentVolume' and 'PersistentVolumeClaim' will be dynamically
       # created for each pod based on the 'StorageClassName' supplied below.
       #
-      create: true
+      create: false
 
       # -- Specify the name of the 'StorageClass' that should be used for the local-home
       # volume claim.
@@ -216,12 +216,12 @@ volumes:
       # -- If 'true', then a 'PersistentVolumeClaim' and 'PersistentVolume' will be dynamically
       # created for shared-home based on the 'StorageClassName' supplied below.
       #
-      create: true
+      create: false
 
       # -- Specify the name of the 'StorageClass' that should be used for the 'shared-home'
       #volume claim.
       #
-      storageClassName: directpv-min-io
+      storageClassName: longhorn
 
       # -- Specifies the standard K8s resource requests and/or limits for the shared-home
       # volume claims.
