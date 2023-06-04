@@ -1043,6 +1043,7 @@ gitlab-runner:
 gitlab:
   ## https://docs.gitlab.com/charts/charts/gitlab/toolbox
   webservice:
+    replicaCount: 1
     ingress:
       enabled: true
       annotations:
