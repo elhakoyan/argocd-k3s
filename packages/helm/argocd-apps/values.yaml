@@ -225,7 +225,7 @@ applications:
   opensearch-cluster:
     enabled: true
     type: raw
-    path: opensearch-clusters/base/base.yaml
+    path: opensearch-clusters/base
   eck-operator: 
     enabled: false
     namespace: "elasticsearch"
@@ -254,7 +254,5 @@ applications:
     revision: release-2.2
   fluent-bit:
     enabled: true
-    # annotations:
-    #   argocd.argoproj.io/sync-wave: "-100"
     type: raw
     path: fluent-bit/base
