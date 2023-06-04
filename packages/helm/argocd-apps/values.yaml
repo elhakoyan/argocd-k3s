@@ -232,7 +232,7 @@ applications:
     values: 
        0: 'opensearch-cluster/base/values.yaml'
   eck-operator: 
-    enabled: true
+    enabled: false
     namespace: "elasticsearch"
     type: helmMultiSource
     revision: 2.8.0
@@ -241,7 +241,7 @@ applications:
     # values: 
     #    0: 'eck-operator/base/values.yaml'
   eck-stack: 
-    enabled: true
+    enabled: false
     namespace: "elasticsearch"
     type: helmMultiSource
     revision: 0.5.0
