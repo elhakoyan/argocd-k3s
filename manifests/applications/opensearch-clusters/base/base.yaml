@@ -25,7 +25,7 @@ spec:
         command:
         - /bin/sh
         - "-c"
-        - echo "vm.max_map_count=262144" | tee -a /etc/sysctl.conf && sysctl -p
+        - "apiclient set --json '{\"kernel\": {\"sysctl\": {\"vm.max_map_count\": \"262144\" } } }'"
         volumeMounts:
         - mountPath: /run/api.sock
           name: api-socket
