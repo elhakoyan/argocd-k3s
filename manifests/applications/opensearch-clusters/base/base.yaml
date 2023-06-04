@@ -29,8 +29,8 @@ spec:
             memory: "1Gi"
             cpu: "500m"
          limits:
-            memory: "2Gi"
-            cpu: "500m"
+            memory: "3Gi"
+            cpu: "2000m"
       persistence:
         pvc:
           storageClass: directpv-min-io
