@@ -251,8 +251,8 @@ applications:
         0: 'eck-stack/base/values.yaml'
   fluent-operator:
     enabled: true
-    type: kustomize
+    type: raw
     namespace: "fluent-bit"
     repoURL: https://github.com/fluent/fluent-operator
-    path: manifests/setup/
+    path: manifests/setup/setup.yaml
     revision: release-2.2
