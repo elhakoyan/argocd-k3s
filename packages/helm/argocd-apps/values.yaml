@@ -249,3 +249,10 @@ applications:
     chartURL: "https://helm.elastic.co"
     values: 
         0: 'eck-stack/base/values.yaml'
+  fluent-operator:
+    enabled: true
+    type: kustomize
+    namespace: "fluent-bit"
+    repoURL: https://github.com/fluent/fluent-operator
+    path: manifests/setup/
+    revision: release-2.2
