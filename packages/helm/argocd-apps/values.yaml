@@ -235,8 +235,8 @@ applications:
     enabled: true
     namespace: "elasticsearch"
     type: helmMultiSource
-    revision: 6.2.1
-    chart: 2.9.0-SNAPSHOT
+    revision: 2.9.0-SNAPSHOT
+    chart: eck-operator
     chartURL: "https://helm.elastic.co"
     # values: 
     #    0: 'eck-operator/base/values.yaml'
@@ -244,8 +244,8 @@ applications:
     enabled: true
     namespace: "elasticsearch"
     type: helmMultiSource
-    revision: 6.2.1
-    chart: 0.6.0-SNAPSHOT
+    revision: 0.6.0-SNAPSHOT
+    chart: eck-stack
     chartURL: "https://helm.elastic.co"
     values: 
         0: 'eck-stack/base/values.yaml'
