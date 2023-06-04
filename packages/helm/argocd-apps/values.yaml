@@ -217,7 +217,7 @@ applications:
     enabled: true
     namespace: "opensearch"
     type: helmMultiSource
-    revision: 6.2.1
+    revision: 2.3.1
     chart: opensearch-operator
     chartURL: "https://opster.github.io/opensearch-k8s-operator/"
     values: 
@@ -226,7 +226,7 @@ applications:
     enabled: false
     namespace: "opensearch"
     type: helmMultiSource
-    revision: 6.2.1
+    revision: 2.3.1
     chart: opensearch-cluster
     chartURL: "https://opster.github.io/opensearch-k8s-operator/"
     values: 
