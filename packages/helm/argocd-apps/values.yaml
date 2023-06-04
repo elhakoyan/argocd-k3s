@@ -210,6 +210,6 @@ applications:
     type: helmMultiSource
     revision: 6.2.1
     chart: rocketchat
-    chartURL: "rocketchat https://rocketchat.github.io/helm-charts"
+    chartURL: "https://rocketchat.github.io/helm-charts"
     values: 
        0: 'rocketchat/base/values.yaml'
