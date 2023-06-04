@@ -2,7 +2,7 @@ apiVersion: opensearch.opster.io/v1
 kind: OpenSearchCluster
 metadata:
   name: opensearch-cluster
-  namespace: default
+  namespace: opensearch
 spec:
   general:
     serviceName: opensearch-cluster
