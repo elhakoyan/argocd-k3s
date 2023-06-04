@@ -186,3 +186,12 @@ applications:
     revision: 7.0.173
     chart: reflector
     chartURL: "https://emberstack.github.io/helm-charts"
+  jira:
+    enabled: true
+    namespace: "jira"
+    type: helmMultiSource
+    revision: 1.12.0
+    chart: jira
+    chartURL: "https://atlassian.github.io/data-center-helm-charts"
+    values: 
+       0: 'jira/base/values.yaml'
