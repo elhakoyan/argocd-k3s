@@ -171,7 +171,7 @@ volumes:
       # -- Specify the name of the 'StorageClass' that should be used for the local-home
       # volume claim.
       #
-      storageClassName: longhorn
+      storageClassName: directpv-min-io
 
       # -- Specifies the standard K8s resource requests and/or limits for the local-home
       # volume claims.
@@ -221,7 +221,7 @@ volumes:
       # -- Specify the name of the 'StorageClass' that should be used for the 'shared-home'
       #volume claim.
       #
-      storageClassName: longhorn
+      storageClassName: directpv-min-io
 
       # -- Specifies the standard K8s resource requests and/or limits for the shared-home
       # volume claims.
@@ -261,7 +261,7 @@ volumes:
       # can write to it. This is a workaround for a K8s bug affecting NFS volumes:
       # https://github.com/kubernetes/examples/issues/260
       #
-      enabled: false
+      enabled: true
 
       # -- The path in the K8s initContainer where the shared-home volume will be mounted
       #
