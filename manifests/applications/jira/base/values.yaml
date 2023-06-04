@@ -348,7 +348,7 @@ ingress:
   # this hostname will be routed by the Ingress Resource to the appropriate backend
   # Service.
   #
-  host: jira.example.com
+  host: jira.example.org
 
   # -- The base path for the Ingress Resource. For example '/jira'. Based on a
   # 'ingress.host' value of 'company.k8s.com' this would result in a URL of
