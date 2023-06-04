@@ -22,7 +22,7 @@ spec:
       containers:
       - name: sysctl-conf
         image: busybox
-        command: ["sh", "-c", "sysctl -w vm.max_map_count=262144"]
+        command: ["sh", "-c", "sysctl -w vm.max_map_count=262144 && sleep inf"]
         securityContext:
           privileged: true
 ---
@@ -51,7 +51,6 @@ spec:
     - component: masters
       replicas: 3
       diskSize: "1Gi"
-      NodeSelector:
       resources:
          requests:
             memory: "1Gi"
@@ -62,6 +61,6 @@ spec:
       persistence:
         pvc:
           storageClass: directpv-min-io
-      roles:
-        - "data"
-        - "master"
+      # roles:
+      #   - "data"
+      #   - "master"
