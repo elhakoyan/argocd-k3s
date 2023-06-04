@@ -49,15 +49,15 @@ spec:
          cpu: "200m"
   nodePools:
     - component: masters
-      replicas: 3
+      replicas: 1
       diskSize: "1Gi"
       resources:
          requests:
             memory: "1Gi"
             cpu: "500m"
          limits:
-            memory: "3Gi"
-            cpu: "2000m"
+            memory: "2Gi"
+            cpu: "1000m"
       persistence:
         pvc:
           storageClass: directpv-min-io
