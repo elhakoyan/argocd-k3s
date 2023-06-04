@@ -20,17 +20,9 @@ spec:
         hostPath:
           path: /usr/bin/apiclient
       containers:
-      - name:  api
-        image: debian:bullseye-slim
-        command:
-        - /bin/sh
-        - "-c"
-        - "apiclient set --json '{\"kernel\": {\"sysctl\": {\"vm.max_map_count\": \"262144\" } } }'"
-        volumeMounts:
-        - mountPath: /run/api.sock
-          name: api-socket
-        - mountPath: /usr/bin/apiclient
-          name: apiclient
+      - name: sysctl-conf
+        image: busybox
+        command: ["sh", "-c", "sysctl -w vm.max_map_count=262144"]
         securityContext:
           privileged: true
 ---
