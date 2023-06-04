@@ -204,3 +204,12 @@ applications:
     chartURL: "https://atlassian.github.io/data-center-helm-charts"
     values: 
        0: 'confluence/base/values.yaml'
+  rocketchatrocketchat:
+    enabled: true
+    namespace: "rocketchat"
+    type: helmMultiSource
+    revision: 1.12.0
+    chart: rocketchat
+    chartURL: "rocketchat https://rocketchat.github.io/helm-charts"
+    values: 
+       0: 'rocketchat/base/values.yaml'

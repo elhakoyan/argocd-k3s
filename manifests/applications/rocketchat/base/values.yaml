@@ -1,0 +1,12 @@
+host: rocketchat.example.org
+ingress:
+  enabled: true
+  pathType: Prefix
+  ingressClassName: "nginx"
+  annotations:
+    cert-manager.io/cluster-issuer: nginx-ca
+  path: /
+  tls: 
+   - secretName: rocketchat-ingress-tls
+     hosts:
+       - rocketchat.example.org
