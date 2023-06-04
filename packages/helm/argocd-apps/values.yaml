@@ -223,14 +223,9 @@ applications:
     values: 
        0: 'opensearch-operator/base/values.yaml'
   opensearch-cluster:
-    enabled: false
-    namespace: "opensearch"
-    type: helmMultiSource
-    revision: 2.3.1
-    chart: opensearch-cluster
-    chartURL: "https://opster.github.io/opensearch-k8s-operator/"
-    values: 
-       0: 'opensearch-cluster/base/values.yaml'
+    enabled: true
+    type: raw
+    path: opensearch-cluster/base/base.yaml
   eck-operator: 
     enabled: false
     namespace: "elasticsearch"
@@ -257,3 +252,9 @@ applications:
     basePathPrefix: manifests/
     path: /setup
     revision: release-2.2
+  fluent-bit:
+    enabled: true
+    # annotations:
+    #   argocd.argoproj.io/sync-wave: "-100"
+    type: raw
+    path: fluent-bit/base
