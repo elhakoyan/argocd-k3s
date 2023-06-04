@@ -225,7 +225,7 @@ applications:
   opensearch-cluster:
     enabled: true
     type: raw
-    path: opensearch-cluster/base/base.yaml
+    path: opensearch-clusters/base/base.yaml
   eck-operator: 
     enabled: false
     namespace: "elasticsearch"
