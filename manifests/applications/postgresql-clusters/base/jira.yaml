@@ -4,7 +4,7 @@ metadata:
   name: jira-psql
   namespace: jira
 spec:
-  instances: 2
+  instances: 1
   logLevel: trace
   enableSuperuserAccess: true
   startDelay: 60
