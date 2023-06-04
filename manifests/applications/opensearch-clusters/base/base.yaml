@@ -61,6 +61,6 @@ spec:
       persistence:
         pvc:
           storageClass: directpv-min-io
-      # roles:
-      #   - "data"
-      #   - "master"
+      roles:
+        - "data"
+        - "master"
