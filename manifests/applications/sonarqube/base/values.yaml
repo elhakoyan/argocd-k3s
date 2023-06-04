@@ -1,3 +1,4 @@
+# https://github.com/SonarSource/helm-chart-sonarqube/blob/master/charts/sonarqube/values.yaml
 ingress:
   enabled: true
   annotations:

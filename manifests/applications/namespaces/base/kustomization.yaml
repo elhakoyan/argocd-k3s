@@ -4,3 +4,5 @@ kind: Kustomization
 resources:
 - gitlab.yaml
 - sonarqube.yaml
+- jira.yaml
+- confluence.yaml
