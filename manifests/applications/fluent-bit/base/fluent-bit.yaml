@@ -44,21 +44,41 @@ spec:
       fluentbit.fluent.io/enabled: "true"
       fluentbit.fluent.io/mode: "fluentbit-only"
 ---
+# apiVersion: fluentbit.fluent.io/v1alpha2
+# kind: ClusterInput
+# metadata:
+#   name: kubelet
+#   labels:
+#     fluentbit.fluent.io/enabled: "true"
+#     fluentbit.fluent.io/mode: "fluentbit-only"
+# spec:
+#   systemd:
+#     tag: service.kubelet
+#     path: /var/log/journal
+#     db: /fluent-bit/tail/kubelet.db
+#     dbSync: Normal
+#     systemdFilter:
+#       - _SYSTEMD_UNIT=kubelet.service
+
 apiVersion: fluentbit.fluent.io/v1alpha2
 kind: ClusterInput
 metadata:
-  name: kubelet
+  name: tail
   labels:
     fluentbit.fluent.io/enabled: "true"
-    fluentbit.fluent.io/mode: "fluentbit-only"
+    fluentbit.fluent.io/mode: "k8s"
 spec:
-  systemd:
-    tag: service.kubelet
-    path: /var/log/journal
-    db: /fluent-bit/tail/kubelet.db
+  tail:
+    tag: kube.*
+    path: /var/log/containers/*.log
+    # Exclude logs from util pod
+    excludePath: /var/log/containers/utils_default_utils-*.log
+    parser: docker   #If it is a containerd environment, then this item should be set to cri
+    refreshIntervalSeconds: 10
+    memBufLimit: 5MB
+    skipLongLines: true
+    db: /fluent-bit/tail/pos.db
     dbSync: Normal
-    systemdFilter:
-      - _SYSTEMD_UNIT=kubelet.service
 ---
 apiVersion: fluentbit.fluent.io/v1alpha2
 kind: ClusterFilter
