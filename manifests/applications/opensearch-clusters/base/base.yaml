@@ -52,7 +52,7 @@ spec:
       generate: true
     version: 2.3.0
     enable: true
-    replicas: 3
+    replicas: 1
     resources:
       requests:
          memory: "512Mi"
@@ -62,7 +62,7 @@ spec:
          cpu: "200m"
   nodePools:
     - component: masters
-      replicas: 1
+      replicas: 3
       resources:
          requests:
             memory: "2Gi"
