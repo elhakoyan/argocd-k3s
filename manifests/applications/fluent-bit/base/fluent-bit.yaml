@@ -98,22 +98,22 @@ spec:
     db: /fluent-bit/tail/pos.db
     dbSync: Normal
 ---
-apiVersion: fluentbit.fluent.io/v1alpha2
-kind: ClusterFilter
-metadata:
-  name: systemd
-  labels:
-    fluentbit.fluent.io/enabled: "true"
-    fluentbit.fluent.io/mode: "fluentbit-only"
-spec:
-  match: service.*
-  filters:
-  - lua:
-      script:
-        key: systemd.lua
-        name: fluent-bit-lua
-      call: add_time
-      timeAsTable: true
+# apiVersion: fluentbit.fluent.io/v1alpha2
+# kind: ClusterFilter
+# metadata:
+#   name: systemd
+#   labels:
+#     fluentbit.fluent.io/enabled: "true"
+#     fluentbit.fluent.io/mode: "fluentbit-only"
+# spec:
+#   match: service.*
+#   filters:
+#   - lua:
+#       script:
+#         key: systemd.lua
+#         name: fluent-bit-lua
+#       call: add_time
+#       timeAsTable: true
 ---
 apiVersion: v1
 data:
