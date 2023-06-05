@@ -109,9 +109,9 @@ spec:
   es:
     host: my-first-cluster-masters.opensearch
     port: 9200
-    generateID: true
+    generateID: false
     logstashPrefix: fluent-app-log-fb-only
-    logstashFormat: true
+    logstashFormat: false
     timeKey: "@timestamp"
     httpUser: 
       valueFrom: 
