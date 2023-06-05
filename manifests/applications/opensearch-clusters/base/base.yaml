@@ -29,16 +29,29 @@ spec:
 apiVersion: opensearch.opster.io/v1
 kind: OpenSearchCluster
 metadata:
-  name: opensearch-cluster
-  namespace: opensearch
+  name: opensearch
+  namespace: openseach
 spec:
+  security:
+    config:
+    tls:
+       http:
+         generate: true 
+       transport:
+         generate: true
+         perNode: true
   general:
-    serviceName: opensearch-cluster
     httpPort: 9200
-    version: 1.3.1
+    serviceName: my-first-cluster
+    version: 2.3.0
+    pluginsList: ["repository-s3"]
+    drainDataNodes: true
   dashboards:
+    tls:
+      enable: true
+      generate: true
+    version: 2.3.0
     enable: true
-    version: 1.3.1
     replicas: 1
     resources:
       requests:
@@ -50,17 +63,15 @@ spec:
   nodePools:
     - component: masters
       replicas: 1
-      diskSize: "1Gi"
       resources:
          requests:
-            memory: "1Gi"
-            cpu: "500m"
+            memory: "2Gi"
+            cpu: "1000m"
          limits:
             memory: "2Gi"
             cpu: "1000m"
-      persistence:
-        pvc:
-          storageClass: directpv-min-io
       roles:
         - "data"
-        - "master"
+        - "cluster_manager"
+      persistence:
+         emptyDir: {}
