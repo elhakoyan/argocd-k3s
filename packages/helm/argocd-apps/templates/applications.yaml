@@ -17,7 +17,7 @@ metadata:
     {{- $annotations = $.Values.global.annotations }}
   {{- end }}
   {{- range $key, $value := $annotations }}
-    {{ $key }}: {{ $value }}
+    {{ $key }}: "{{ $value }}"
   {{- end }}
   labels:
   {{- $labels := dict }}
@@ -32,7 +32,7 @@ metadata:
   labels:
   {{- end }}
   {{- range $key, $value := $labels }}
-    {{ $key }}: {{ $value }}
+    {{ $key }}: "{{ $value }}"
   {{- end }}
 spec:
   project: {{ default "default" $details.project }}
