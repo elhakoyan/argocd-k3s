@@ -129,7 +129,7 @@ applications:
        0: 'prometheus-stack/base/values.yaml'
        1: 'prometheus-stack/prod/values.yaml'
   sonarqube:
-    enabled: true
+    enabled: false
     namespace: "sonarqube"
     type: helmMultiSource
     revision: "10.0.0+521"
@@ -153,7 +153,7 @@ applications:
        0: 'external-dns/base/values.yaml'
        1: 'external-dns/prod/values.yaml'
   gitlab:
-    enabled: true
+    enabled: false
     namespace: "gitlab"
     type: helmMultiSource
     revision: "7.0.1"
