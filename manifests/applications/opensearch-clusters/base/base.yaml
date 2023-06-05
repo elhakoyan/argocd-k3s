@@ -52,7 +52,7 @@ spec:
       generate: true
     version: 2.3.0
     enable: true
-    replicas: 1
+    replicas: 3
     resources:
       requests:
          memory: "512Mi"
