@@ -11,6 +11,8 @@ spec:
   positionDB:
     hostPath:
       path: /var/lib/fluent-bit/
+  env:
+    FLB_LOG_LEVEL: debug
   resources:
     requests:
       cpu: 10m
