@@ -69,7 +69,7 @@ metadata:
     fluentbit.fluent.io/mode: "k8s"
 spec:
   tail:
-    tag: kube.*
+    # tag: kube.*
     path: /var/log/containers/*.log
     # Exclude logs from util pod
     excludePath: /var/log/containers/utils_default_utils-*.log
