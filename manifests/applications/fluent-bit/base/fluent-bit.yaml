@@ -105,12 +105,12 @@ metadata:
     fluentbit.fluent.io/enabled: "true"
     fluentbit.fluent.io/mode: "k8s"
 spec:
-  matchRegex: (?:kube|service)\.(.*)
+  # matchRegex: (?:kube|service)\.(.*)
   es:
     host: my-first-cluster-masters.opensearch
     port: 9200
     generateID: true
-    logstashPrefix: fluent-log-fb-only
+    logstashPrefix: fluent-app-log-fb-only
     logstashFormat: true
     timeKey: "@timestamp"
     httpUser: 
