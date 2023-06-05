@@ -248,9 +248,10 @@ applications:
   fluent-operator:
     enabled: true
     type: kustomize
-    namespace: "fluent"
     repoURL: https://github.com/fluent/fluent-operator
     basePathPrefix: manifests/
+    kustomize:
+      namespace: opensearch
     path: /setup
     revision: release-2.2
   fluent-bit:
