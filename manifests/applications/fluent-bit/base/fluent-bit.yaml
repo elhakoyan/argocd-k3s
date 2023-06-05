@@ -120,12 +120,12 @@ spec:
     httpUser: 
       valueFrom: 
         secretKeyRef:
-          name: opensearch-cluster-admin-password
+          name: opensearch-admin-password
           key: username
     httpPassword:
       valueFrom: 
         secretKeyRef:
-          name: opensearch-cluster-admin-password
+          name: opensearch-admin-password
           key: password
     tls:
       verify: false
