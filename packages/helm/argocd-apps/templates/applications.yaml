@@ -23,8 +23,8 @@ metadata:
   {{- $labels := dict }}
   {{- if and $details.labels  $.Values.global.labels }}
     {{- $labels = mustMergeOverwrite ($.Values.global.labels | deepCopy) $details.labels }}
-  {{- else if $details.annotations }}
-    {{- $labels = $details.annotations }}
+  {{- else if $details.labels }}
+    {{- $labels = $details.labels }}
   {{- else }}
     {{- $labels = $.Values.global.labels }}
   {{- end }}
