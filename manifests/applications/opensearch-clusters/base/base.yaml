@@ -75,3 +75,37 @@ spec:
         - "cluster_manager"
       persistence:
          emptyDir: {}
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: nginx-ca
+    ingress.kubernetes.io/proxy-body-size: 100M
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/secure-backends: "true"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  creationTimestamp: "2023-06-04T15:11:33Z"
+  generation: 1
+  name: opensearch
+  namespace: opensearch
+spec:
+  rules:
+  - host: opensearch.example.org
+    http:
+      paths:
+      - backend:
+          service:
+            name: my-first-cluster-dashboards
+            port:
+              number: 5601
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - opensearch.example.org
+    secretName: opensearch-tls-ingress
