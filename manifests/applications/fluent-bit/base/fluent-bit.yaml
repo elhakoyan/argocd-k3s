@@ -111,7 +111,7 @@ metadata:
 spec:
   matchRegex: (?:kube|service)\.(.*)
   es:
-    host: opensearch-cluster-masters
+    host: my-first-cluster-masters.opensearch
     port: 9200
     generateID: true
     logstashPrefix: fluent-log-fb-only
