@@ -44,7 +44,7 @@ spec:
     httpPort: 9200
     serviceName: my-first-cluster
     version: 2.3.0
-    pluginsList: ["repository-s3"]
+    pluginsList: []
     drainDataNodes: true
   dashboards:
     tls:
