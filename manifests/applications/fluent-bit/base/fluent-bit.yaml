@@ -22,27 +22,45 @@ spec:
   tolerations:
     - operator: Exists
 ---
-apiVersion: fluentbit.fluent.io/v1alpha2
-kind: ClusterFluentBitConfig
+# apiVersion: fluentbit.fluent.io/v1alpha2
+# kind: ClusterFluentBitConfig
+# metadata:
+#   name: fluent-bit-only-config
+#   labels:
+#     app.kubernetes.io/name: fluent-bit
+# spec:
+#   service:
+#     parsersFile: parsers.conf
+#   inputSelector:
+#     matchLabels:
+#       fluentbit.fluent.io/enabled: "true"
+#       fluentbit.fluent.io/mode: "fluentbit-only"
+#   filterSelector:
+#     matchLabels:
+#       fluentbit.fluent.io/enabled: "true"
+#       fluentbit.fluent.io/mode: "fluentbit-only"
+#   outputSelector:
+#     matchLabels:
+#       fluentbit.fluent.io/enabled: "true"
+#       fluentbit.fluent.io/mode: "fluentbit-only"
+
+apiVersion: fluentd.fluent.io/v1alpha1
+kind: ClusterFluentdConfig
 metadata:
-  name: fluent-bit-only-config
+  name: cluster-fluentd-config
   labels:
-    app.kubernetes.io/name: fluent-bit
+    config.fluentd.fluent.io/enabled: "true"
 spec:
-  service:
-    parsersFile: parsers.conf
-  inputSelector:
+  watchedNamespaces: 
+  - kube-system
+  - default
+  - kafka
+  - elastic
+  - fluent
+  clusterOutputSelector:
     matchLabels:
-      fluentbit.fluent.io/enabled: "true"
-      fluentbit.fluent.io/mode: "fluentbit-only"
-  filterSelector:
-    matchLabels:
-      fluentbit.fluent.io/enabled: "true"
-      fluentbit.fluent.io/mode: "fluentbit-only"
-  outputSelector:
-    matchLabels:
-      fluentbit.fluent.io/enabled: "true"
-      fluentbit.fluent.io/mode: "fluentbit-only"
+      output.fluentd.fluent.io/scope: "cluster"
+      output.fluentd.fluent.io/enabled: "true"
 ---
 # apiVersion: fluentbit.fluent.io/v1alpha2
 # kind: ClusterInput
