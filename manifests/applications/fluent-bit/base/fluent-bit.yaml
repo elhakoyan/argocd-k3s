@@ -106,10 +106,12 @@ kind: ClusterOutput
 metadata:
   name: es
   labels:
-    fluentbit.fluent.io/enabled: "true"
-    fluentbit.fluent.io/mode: "fluentbit-only"
+    # fluentbit.fluent.io/enabled: "true"
+    # fluentbit.fluent.io/mode: "fluentbit-only"
+    output.fluentd.fluent.io/scope: "cluster"
+    output.fluentd.fluent.io/enabled: "true"
 spec:
-  matchRegex: (?:kube|service)\.(.*)
+  # matchRegex: (?:kube|service)\.(.*)
   es:
     host: my-first-cluster-masters.opensearch
     port: 9200
