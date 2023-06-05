@@ -51,12 +51,12 @@ metadata:
   labels:
     config.fluentd.fluent.io/enabled: "true"
 spec:
-  watchedNamespaces: 
-  - kube-system
-  - default
-  - kafka
-  - elastic
-  - fluent
+  # watchedNamespaces: 
+  # - kube-system
+  # - default
+  # - kafka
+  # - elastic
+  # - fluent
   clusterOutputSelector:
     matchLabels:
       output.fluentd.fluent.io/scope: "cluster"
