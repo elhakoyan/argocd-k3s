@@ -112,7 +112,7 @@ spec:
     generateID: true
     logstashPrefix: fluent-app-log-fb-only
     logstashFormat: true
-    suppressTypeName: On
+    suppressTypeName: true
     timeKey: "@timestamp"
     httpUser: 
       valueFrom: 
