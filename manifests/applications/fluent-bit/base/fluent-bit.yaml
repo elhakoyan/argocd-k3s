@@ -114,6 +114,7 @@ spec:
     logstashFormat: true
     suppressTypeName: "No"
     timeKey: "@timestamp"
+    type: "_doc"
     httpUser: 
       valueFrom: 
         secretKeyRef:
