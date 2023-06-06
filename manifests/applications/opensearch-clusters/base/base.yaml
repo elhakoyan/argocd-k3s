@@ -78,6 +78,8 @@ spec:
         emptyDir: {}
         # pvc:
         #   storageClass: "directpv-min-io"
+            # accessModes:
+            # - ReadWriteOnce
 
 ---
 apiVersion: networking.k8s.io/v1
