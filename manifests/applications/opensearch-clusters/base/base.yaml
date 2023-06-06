@@ -75,11 +75,10 @@ spec:
         - "data"
         - "cluster_manager"
       persistence:
-        # emptyDir: {}
         pvc:
           storageClass: "directpv-min-io"
-            accessModes:
-            - ReadWriteOnce
+          accessModes:
+          - ReadWriteOnce
 
 ---
 apiVersion: networking.k8s.io/v1
