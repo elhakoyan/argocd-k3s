@@ -20,3 +20,6 @@ mongodb:
     passwords:
       - rocketchat
     rootPassword: rocketchatroot
+
+podAnnotations:
+  argocd.argoproj.io/sync-wave: "100"

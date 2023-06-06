@@ -62,6 +62,7 @@ spec:
          cpu: "1000m"
   nodePools:
     - component: masters
+      diskSize: "2Gi"
       replicas: 3
       resources:
          requests:
