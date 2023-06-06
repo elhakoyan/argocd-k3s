@@ -8,7 +8,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/grig777/k3s-argocd-provisioning.git
+    repoURL: https://git.goya.am/grigor.poghosyan/k3s-argocd-provisioning.git
     path: packages/helm/argocd-apps
     targetRevision: HEAD
   syncPolicy:
