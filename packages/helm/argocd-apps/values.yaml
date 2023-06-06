@@ -1,6 +1,6 @@
 
 global:
-  repoURL: "https://github.com/grig777/k3s-argocd-provisioning.git"
+  repoURL: "https://git.goya.am/grigor.poghosyan/k3s-argocd-provisioning.git"
   syncOptions:
     CreateNamespace: true
   basePathPrefix: manifests/applications/
